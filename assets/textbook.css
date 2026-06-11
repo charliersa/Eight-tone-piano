@@ -374,6 +374,68 @@ body{
 .nowrap{white-space:nowrap}
 
 /* ============================================================
+   響應式補充：手機與平板
+   ============================================================ */
+
+/* ≤ 768px — 平板直立：縮減側邊距 */
+@media(max-width:768px){
+  .sheet{padding-left:20px;padding-right:20px}
+  .runhead{padding-left:20px;padding-right:20px}
+  .pager{padding-left:20px;padding-right:20px}
+  .cover,.intro,.road{padding-left:20px;padding-right:20px}
+}
+
+/* ≤ 600px — 手機 */
+@media(max-width:600px){
+  .topbar-inner{padding-left:14px;padding-right:14px}
+
+  .sheet{padding-left:16px;padding-right:16px}
+  .runhead{padding-left:16px;padding-right:16px}
+  .pager{padding-left:16px;padding-right:16px;flex-direction:column;margin-top:40px}
+  .pager .next{text-align:left}
+  .cover,.intro,.road{padding-left:16px;padding-right:16px}
+
+  /* cover 四格圖：4 欄 → 2×2 */
+  .cover-figure{grid-template-columns:repeat(2,1fr);gap:10px}
+
+  /* 週次大標字縮 */
+  .week-hero h1{font-size:clamp(22px,7vw,36px)}
+
+  /* 節標題區：縮小節次方塊 */
+  .lesson-head{gap:12px}
+  .lesson-tag{width:46px;height:46px}
+  .lesson-tag b{font-size:18px}
+  .lesson-head h2{font-size:20px}
+
+  /* 步驟編號：縮小並重新對齊垂直線 */
+  .step{padding-left:48px}
+  .step::before{width:34px;height:34px;font-size:15px;border-radius:8px}
+  .step::after{left:16px;top:38px}
+
+  /* 上下頁 pager 垂直排列 */
+  .pager a{flex:none}
+
+  /* 工作表標頭：橫排 → 縱排 */
+  .ws-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .ws-meta{text-align:left}
+
+  /* 表格防溢出 */
+  .tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .rubric{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+  /* 流程管道換行 */
+  .pipe-row{flex-wrap:wrap;gap:8px}
+}
+
+/* ≤ 400px — 極小螢幕 */
+@media(max-width:400px){
+  .sheet,.runhead,.pager,.cover,.intro,.road{padding-left:12px;padding-right:12px}
+  .topbar-inner{padding-left:12px;padding-right:12px}
+  .cover-figure{gap:8px}
+  .compare{grid-template-columns:1fr}
+}
+
+/* ============================================================
    PRINT — A4 portrait booklet
    ============================================================ */
 @media print{
