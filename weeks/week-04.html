@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 週 · Tinkercad &amp; Bambu Studio | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-04.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段二 · 機構與 3D 建模</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 4 週</span>&nbsp;·&nbsp;3D 建模基礎</div>
+    <h1>Tinkercad &amp; Bambu Studio<br>3D 建模基礎概念</h1>
+    <p class="week-lead">本週銜接前一週的 2D 設計成果，正式進入 3D 建模領域。透過 Tinkercad 的直覺幾何組合介面，讓學生理解「加法建模（聯集）」與「減法建模（差集）」的基本邏輯，並學會將 Illustrator 的向量檔案匯入作為造型基礎，最後輸出至 Bambu Studio 進行列印前置設定。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">核心 <b>聯集 · 差集 · 切片</b></span>
+      <span class="chip">軟體：Tinkercad / Bambu Studio</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>匯入</b></div>
+      <div><h2>從 Illustrator 匯入圖檔至 Tinkercad</h2><div class="lh-sub">SVG 是 2D → 3D 之間的橋樑格式</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會將 Illustrator 繪製的向量圖形（SVG 格式）匯入 Tinkercad，作為 3D 造型的底圖或拉伸基礎。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>在 Illustrator 將圖形輸出為 SVG</h4>
+        <p><strong>為什麼是 SVG：</strong>SVG（Scalable Vector Graphics）以「數學路徑」描述形狀，與 JPG／PNG 等像素點陣圖不同。Tinkercad 只能讀取「<span class="kw">封閉路徑</span>」的向量輪廓，再沿 Z 軸拉高為立體模型，因此 SVG 是 2D → 3D 的標準橋樑格式。</p>
+        <p><strong>檢查路徑封閉：</strong>按 <span class="kbd">Ctrl + Y</span> 切換輪廓檢視，確認所有要拉伸的形狀皆為「頭尾相連的封閉路徑」；未封閉的路徑匯入後無法產生厚度，只會呈現一條線。</p>
+        <p><strong>文字建立外框：</strong>若圖檔含文字，選取後按 <span class="kbd">Ctrl + Shift + O</span> 轉為向量路徑。接著「檔案 → 另存新檔 → SVG」，SVG 設定檔選「SVG 1.1」、字體選「轉換成外框」、影像位置選「內嵌」。</p>
+        <p class="muted keyline"><strong>常見錯誤：</strong>路徑未封閉導致無法拉伸；多路徑重疊時 Tinkercad 會把重疊區視為孔洞而破壞造型；單一 SVG 形狀過多（節點過密）會卡頓或閃退，建議單檔形狀控制在 10 個以內。</p>
+      </div>
+      <div class="step">
+        <h4>於 Tinkercad「匯入」面板載入 SVG 並設定尺寸與高度</h4>
+        <p>進入 Tinkercad 編輯畫面 → 點右上角「<strong>匯入（Import）</strong>」（雲朵向上箭頭）→「從電腦選擇檔案」載入 SVG。</p>
+        <p><strong>比例（Scale）：</strong>預設 1.0，Tinkercad 會把 SVG 數值解讀為公釐；若物件過大爆出工作平面，將比例調為 0.1 或 0.5。</p>
+        <p><strong>高度（Height）：</strong>即 Z 軸拉伸厚度，例如面板設 3mm、結構支撐件設 5mm，匯入後仍可修改。</p>
+        <p><strong>檢查尺寸：</strong>點選物件看右上角 X／Y／Z 數值；尺寸不符可直接輸入正確數字等比例縮放。</p>
+        <p class="muted keyline"><strong>教學提示：</strong>匯入前先於 Illustrator 將畫板設為與實際零件 1:1（例如面板 80×80mm），匯入 Tinkercad 後尺寸通常即可吻合。</p>
+      </div>
+      <div class="step">
+        <h4>與內建幾何體組合修整</h4>
+        <p>匯入的 SVG 物件與內建立方體、圓柱體屬性完全相同，可做布林運算，也可切換「實體 / 孔洞」屬性。</p>
+        <p><strong>加厚補強（聯集）：</strong>面板太薄時拖入立方體置於底部，框選兩者按 <span class="kbd">Ctrl+G</span> 群組，形成有底座的厚實零件。</p>
+        <p><strong>挖機芯孔位（差集）：</strong>拖入圓柱按 <span class="kbd">H</span> 切為「孔洞」（半透明斜線），移至打孔位置、確認孔洞高度大於面板厚度，框選後群組即挖出孔位。</p>
+        <p><strong>對齊與鏡像：</strong>對齊工具（<span class="kbd">L</span>）使物件於各軸對齊；卡榫成對出現時可先做一個按 <span class="kbd">Ctrl+D</span> 複製、再按 <span class="kbd">M</span> 鏡像翻面；正交檢視（數字鍵 1–6）切換六面檢查。確認後「匯出 → .STL」。</p>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <div class="pipe-row"><span class="pipe-badge">🎨 Illustrator 向量圖（第二週）</span></div>
+      <div class="pipe-arrow">▼ &nbsp;輸出 SVG</div>
+      <div class="pipe-row"><span class="pipe-badge">🧊 Tinkercad 匯入並拉伸厚度</span></div>
+      <div class="pipe-arrow">▼ &nbsp;與基本幾何體布林運算</div>
+      <div class="pipe-row"><span class="pipe-badge">⚙️ 具備機構功能的 3D 模型</span></div>
+      <div class="pipe-arrow">▼ &nbsp;匯出 STL</div>
+      <div class="pipe-row"><span class="pipe-badge">🖨️ Bambu Studio 切片（第三節）</span></div>
+      <div class="pipe-arrow">▼</div>
+      <div class="pipe-row"><span class="pipe-badge" style="background:var(--accent-wash);border-color:var(--accent-line);color:var(--accent-deep)">✨ 3D 列印實體零件</span></div>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>本節核心是讓學生體會「前幾週繪製的 2D 線稿並非單純練習，而是未來 3D 零件的真實基底」。從 SVG 到 STL 的轉換串起「平面設計 → 立體製造」的完整工作流，也是學生首次體會 CAD 工作流中「<strong>檔案格式即介面</strong>」的關鍵概念。提醒：SVG 必須為封閉路徑才能正確拉伸。</p>
+    </div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>建模</b></div>
+      <div><h2>Tinkercad 基礎幾何組合教學</h2><div class="lh-sub">實體 + 孔洞 + 群組 = 多數工業零件</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>掌握 Tinkercad 的核心操作邏輯——以「實體」與「孔洞」兩種屬性，透過群組（Group）達成布林運算的造型效果。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>移動、旋轉、縮放基本操作</h4>
+        <p>從右側「基本形狀」面板拖曳立方體至工作平面。<strong>移動：</strong>左鍵拖曳於 XY 平面；按 <span class="kbd">Alt</span> 拖上方黑色錐形把手可升降 Z 軸。<strong>旋轉：</strong>物件外圍三個彎曲箭頭對應 X／Y／Z 軸，按 <span class="kbd">Shift</span> 鎖定 22.5 度一階。<strong>縮放：</strong>白色方塊把手單軸縮放、角落黑色把手等比例。<strong>練習重點：</strong>請學生輸入精確數值（例如 20×20×10mm），培養「以數字思考」的習慣。</p>
+      </div>
+      <div class="step">
+        <h4>以聯集組合多個幾何體</h4>
+        <p>拖曳兩個以上物件（如立方體 + 圓柱）→ 用對齊工具（<span class="kbd">L</span>）擺好相對位置 → 框選後按「群組（<span class="kbd">Ctrl+G</span>）」。群組後兩物件合而為一、顏色統一，這就是布林運算的「<span class="kw">聯集（Union）</span>」。需還原按 <span class="kbd">Ctrl+Shift+G</span> 取消群組。</p>
+      </div>
+      <div class="step">
+        <h4>用「孔洞」屬性挖除材料製作卡榫孔</h4>
+        <p>拖一個圓柱／立方體作為「要挖除的形狀」→ 右上角屬性由「實體」切為「<span class="kw">孔洞（Hole）</span>」（變半透明斜線）→ 移到主體要挖的位置（孔洞高度需 ≥ 主體厚度）→ 框選主體+孔洞按 <span class="kbd">Ctrl+G</span>，孔洞體積即被扣除。這就是「差集（Subtract）」，是製作卡榫孔、螺絲孔、穿線孔的核心技巧。</p>
+      </div>
+      <div class="step">
+        <h4>完成一個簡易機構零件</h4>
+        <p><strong>綜合練習：</strong>製作「附螺絲孔的固定座」——立方體基座（30×30×8mm），中央以圓柱孔洞挖 Ø4mm 穿孔，四角再挖 Ø3mm 螺絲固定孔。可加導角（圓角立方體）或補強肋（細長立方體聯集於底部）。完成後按數字鍵 1–6 切換正交視圖檢查孔位對齊、無破面，最後「匯出 → .STL」。</p>
+      </div>
+    </div>
+
+    <div class="shortcuts">
+      <h3>Tinkercad 常用快捷鍵速查</h3>
+      <p class="sc-note">熟練後操作效率可提升 3 倍以上</p>
+      <div class="sc-grid">
+        <div class="sc-grp">視角控制</div>
+        <div class="sc-row"><span class="sc-key">1 ~ 6</span><span class="sc-desc">切換正交視圖（六面）</span></div>
+        <div class="sc-row"><span class="sc-key">0</span><span class="sc-desc">回到預設透視</span></div>
+        <div class="sc-row"><span class="sc-key">F</span><span class="sc-desc">聚焦選取物件</span></div>
+        <div class="sc-row"><span class="sc-key">右鍵拖曳</span><span class="sc-desc">旋轉視角</span></div>
+        <div class="sc-grp">物件編輯</div>
+        <div class="sc-row"><span class="sc-key">Ctrl + G</span><span class="sc-desc">群組（布林運算）</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl+Shift+G</span><span class="sc-desc">取消群組</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + D</span><span class="sc-desc">原地複製</span></div>
+        <div class="sc-row"><span class="sc-key">L</span><span class="sc-desc">對齊工具</span></div>
+        <div class="sc-row"><span class="sc-key">M</span><span class="sc-desc">鏡像工具</span></div>
+        <div class="sc-row"><span class="sc-key">H</span><span class="sc-desc">實體 → 孔洞</span></div>
+        <div class="sc-row"><span class="sc-key">T</span><span class="sc-desc">孔洞 → 實體</span></div>
+        <div class="sc-row"><span class="sc-key">D</span><span class="sc-desc">貼齊工作平面</span></div>
+        <div class="sc-grp">操作輔助</div>
+        <div class="sc-row"><span class="sc-key">Shift 點選</span><span class="sc-desc">複選多物件</span></div>
+        <div class="sc-row"><span class="sc-key">Shift 旋轉</span><span class="sc-desc">22.5 度一階</span></div>
+        <div class="sc-row"><span class="sc-key">Alt 拖曳</span><span class="sc-desc">複製並移動</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + L</span><span class="sc-desc">鎖定 / 解鎖</span></div>
+      </div>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>建立「<strong>複雜造型 = 簡單幾何的加減組合</strong>」的設計思維。透過「實體 + 孔洞 + 群組」三個動作反覆組合，學生即可理解多數工業零件的建模邏輯，為日後使用進階 3D 軟體打下觀念基礎。</p>
+    </div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>切片</b></div>
+      <div><h2>Bambu Studio 與基本列印設定</h2><div class="lh-sub">設計與機器之間的橋樑</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識 Bambu Studio 的工作介面，理解列印前所需的基本設定，包括擺放方位、層高、填充率與支撐結構。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>將 Tinkercad 模型匯出為 STL</h4>
+        <p>Tinkercad 右上角「匯出 → .STL」。多物件可勾「僅匯出選取的形狀」分件輸出。檔名建議「<span class="kw">作品名_零件名_版次.stl</span>」（例：電子鋼琴_面板_v2.stl），方便版本管理。</p>
+      </div>
+      <div class="step">
+        <h4>開啟 Bambu Studio 並匯入模型</h4>
+        <p>確認左上角「印表機」設為實際機型（X1C / P1S / A1 mini）→ 右側「線材」面板選實際材料（PLA / PETG / ABS），軟體自動套用對應溫度與速度 → 拖曳 STL 至工作平台。</p>
+      </div>
+      <div class="step">
+        <h4>擺放方位與基本調整</h4>
+        <p>移動（<span class="kbd">M</span>）、旋轉（<span class="kbd">R</span>，按 <span class="kbd">Shift</span> 鎖 15 度）、縮放（<span class="kbd">S</span>）；按 <span class="kbd">F</span> 自動方位（Auto Orient）。<strong>教學重點：平整面朝下、避開大量懸空，可大幅減少支撐用量與失敗率。</strong></p>
+      </div>
+      <div class="step">
+        <h4>列印參數設定（最關鍵的四項）</h4>
+        <p><strong>層高（Layer Height）：</strong>0.2mm 標準；外觀件 0.12mm、結構件 0.28mm。越薄越精細但時間倍增。<br><strong>填充率（Infill）：</strong>標準 15%、結構件 25–40%、外觀件 10%。<br><strong>外殼層數（Wall Loops）：</strong>預設 2 層；承重或鎖螺絲調 3–4 層。<br><strong>支撐（Support）：</strong>懸空角度 45 度以上才啟用，可選一般 / 樹狀。</p>
+      </div>
+      <div class="step">
+        <h4>切片與預覽</h4>
+        <p>右下角「切片（Slice）」→ 切到「預覽」分頁看預估時間、線材用量、總層數 → 拖右側層數滑桿逐層檢視，確認支撐位置、填充樣式、首層附著。發現問題回「準備」分頁修改後重新切片。</p>
+      </div>
+      <div class="step">
+        <h4>傳送至印表機</h4>
+        <p>三種方式：① <strong>雲端列印</strong>（WiFi 直送，最方便，需登入帳號）；② <strong>SD 卡</strong>（匯出 .3mf / .gcode.3mf）；③ <strong>LAN 區網</strong>（學校環境建議）。傳送前確認：平台清潔、線材充足、噴頭歸位。</p>
+      </div>
+    </div>
+
+    <div class="shortcuts">
+      <h3>Bambu Studio 常用快捷鍵</h3>
+      <p class="sc-note">移動 M · 旋轉 R · 縮放 S · 擺放 L</p>
+      <div class="sc-grid">
+        <div class="sc-row"><span class="sc-key">M / R / S</span><span class="sc-desc">移動 / 旋轉 / 縮放</span></div>
+        <div class="sc-row"><span class="sc-key">F</span><span class="sc-desc">自動方位</span></div>
+        <div class="sc-row"><span class="sc-key">A</span><span class="sc-desc">自動排列多件</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + R</span><span class="sc-desc">重新切片</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + S</span><span class="sc-desc">儲存專案（.3mf）</span></div>
+        <div class="sc-row"><span class="sc-key">Delete</span><span class="sc-desc">刪除選取物件</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--safe)">!</div><div><h3>常見問題排除</h3><div class="ch-sub">Troubleshooting</div></div></div>
+      <table class="tbl" style="box-shadow:none;margin:6px 0 0">
+        <tbody>
+          <tr><td class="em" style="width:32%">首層脫落</td><td>檢查熱床溫度、增加 Brim 裙邊、清潔列印平台。</td></tr>
+          <tr><td class="em">懸空塌陷</td><td>啟用支撐，或調整擺放方位讓懸空朝上。</td></tr>
+          <tr><td class="em">成品翹邊</td><td>ABS / PETG 開啟機箱保溫；降低列印速度。</td></tr>
+          <tr><td class="em">層紋明顯</td><td>降低層高、降低列印速度、檢查皮帶張力。</td></tr>
+          <tr><td class="em">細節失真</td><td>檢查 SVG 路徑是否封閉、模型尺寸是否過小（&lt;5mm）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><div class="block-label">💡 第一件先印什麼</div><p>第一次列印建議以「Benchy 小船」測試件練習，可同時驗證機器校正、線材狀態、軟體設定三者是否正確。</p></div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 4-1｜布林運算與切片設定</h3><div class="ws-kind">Modeling &amp; Slicing Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">用自己的話解釋「聯集」與「差集」的差別，並各舉一個電子鋼琴零件的例子。</span>
+        <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">你做的「附螺絲孔固定座」尺寸是＿＿×＿＿×＿＿ mm，穿孔 Ø＿＿ mm，螺絲孔 Ø＿＿ mm。</span></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">切片四項參數你設定了：層高＿＿ mm、填充＿＿%、外殼＿＿層、支撐（有／無）。為什麼這樣設？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">自我檢核</span>
+        <div class="ws-check">
+          <label><span class="ws-box"></span>成功匯入 SVG 並拉伸</label>
+          <label><span class="ws-box"></span>會用孔洞挖孔</label>
+          <label><span class="ws-box"></span>匯出 STL</label>
+          <label><span class="ws-box"></span>完成一次切片預覽</label>
+        </div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>Tinkercad 的門檻低、成就感高，是建立 3D 信心的關鍵一週。建議讓每位學生都「親手挖出一個孔」，那一刻的「原來這麼簡單」會驅動他們主動嘗試更複雜的造型。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-03.html"><span class="pg-dir">← 上一週</span><span class="pg-t">機構基礎：孔位與間距</span></a>
+  <a class="next" href="week-05.html"><span class="pg-dir">下一週 →</span><span class="pg-t">3D 列印機器與材料認識</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

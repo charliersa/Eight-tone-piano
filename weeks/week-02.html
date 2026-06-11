@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 2 週 · 逆向製作與向量繪圖 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-02.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段一 · 觀察與逆向</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 2 週</span>&nbsp;·&nbsp;逆向工程</div>
+    <h1>逆向製作與向量繪圖<br>從實體到向量圖檔</h1>
+    <p class="week-lead">引導學生在組裝過程中以手機拍照，觀察產品的基本組成構造，並實際用軟體製作出相同、或改造出心目中的產品，從中了解開發、研發、製作、製造的完整流程。讓每位學生對 3D 創客產生深刻興趣、不對 3D 產生排斥，不只是跟著做，還能創造屬於自己的生命作品。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">主軸 <b>Illustrator 向量繪圖</b></span>
+      <span class="chip">軟體：Adobe Illustrator</span>
+      <span class="chip">產出：向量說明圖 / 雷切檔</span>
+    </div>
+  </header>
+
+  <!-- ============ 第一節 ============ -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>軟體</b></div>
+      <div><h2>Illustrator 軟體基礎操作</h2><div class="lh-sub">介面 · 向量觀念 · 照片描圖 · 鋼筆工具</div></div>
+    </div>
+    <p class="prose lead-p">本節為 Illustrator 入門，目標是讓學生在進入實作前，先熟悉軟體介面與向量繪圖的核心觀念，建立後續描圖、繪製說明圖、輸出雷切檔的基礎。</p>
+
+    <!-- A. 介面 -->
+    <h3 class="prose" style="font-family:var(--serif)">A · 認識介面與向量觀念</h3>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識 Adobe Illustrator 的工作介面（工具列、控制列、屬性面板、圖層面板），理解向量圖與點陣圖的本質差異，並能獨立完成新檔建立、文件設定、儲存與輸出的基本流程。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>介紹介面四大區塊：左側工具列、上方控制列、右側面板群、中央畫布。</li>
+        <li>練習新建文件並設定畫板尺寸、單位（mm）、色彩模式（RGB／CMYK）。</li>
+        <li>認識選取工具（V）、直接選取工具（A）、縮放（Z）、手形（H）等基本檢視操作。</li>
+        <li>練習圖層建立、命名、鎖定與顯示切換。</li>
+        <li>儲存為 .ai 原生檔，並另存為 .svg／.pdf 等輸出格式。</li>
+      </ol>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>強調「<strong>向量圖無解析度限制</strong>」「<strong>以圖層分類管理零件</strong>」兩大核心觀念，並建立「邊做邊存檔」的工作習慣，避免當機損失。</p>
+    </div>
+    <div class="shot">
+      <svg class="shot-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 4v16"/></svg>
+      <div class="shot-t">版位預留：Illustrator 介面四大區塊標註圖</div>
+      <div class="shot-d">之後放實際截圖，圈出工具列 / 控制列 / 面板群 / 畫布四區</div>
+      <div class="shot-tag">IMG · ai-interface</div>
+    </div>
+
+    <!-- B. 照片描圖 -->
+    <h3 class="prose" style="font-family:var(--serif)">B · 照片描圖</h3>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會將實體拍攝的照片或點陣圖匯入 Illustrator，透過「影像描圖（Image Trace）」自動轉換或手動鋼筆描繪，產出可縮放、可編輯的向量路徑，作為後續雷切與 3D 建模的圖檔基礎。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>使用「檔案 → 置入（<span class="kbd">Shift + Ctrl + P</span>）」將照片匯入畫布，建議勾選「連結」以減少檔案肥大。</li>
+        <li>將照片鎖定於獨立圖層作為描圖底圖，並調整不透明度至 50% 方便辨識。</li>
+        <li>選取照片後點上方控制列「影像描圖」下拉，嘗試「高保真度照片 / 低保真度照片 / 黑白標誌 / 線條圖」等預設集，比較結果。</li>
+        <li>點「展開（Expand）」將描圖結果轉為可編輯的向量路徑。</li>
+        <li>進階：新建空白圖層，用鋼筆工具沿照片輪廓手動描繪，產出更精準的向量線稿。</li>
+      </ol>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>引導學生比較「自動描圖」與「手動描圖」的差異——自動快速但路徑點過多、輪廓粗糙；手動費時但路徑乾淨、可控性高。<strong>雷切用途的圖檔務必以手動描圖為主</strong>，避免自動產生的破碎節點造成雷射機停頓或重複切割。</p>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th style="width:36%">影像描圖預設集</th><th>適用情境</th></tr></thead>
+      <tbody>
+        <tr><td class="em">高保真度照片</td><td>彩色寫實圖、輸出至印刷品。</td></tr>
+        <tr><td class="em">低保真度照片</td><td>風格化處理、降低細節。</td></tr>
+        <tr><td class="em">黑白標誌</td><td>LOGO、簡單剪影，<strong>雷切首選</strong>。</td></tr>
+        <tr><td class="em">線條圖</td><td>手繪稿、漫畫線條轉向量。</td></tr>
+        <tr><td class="em">素描藝術／剪影</td><td>創意風格化呈現。</td></tr>
+      </tbody>
+    </table>
+
+    <!-- C. 鋼筆工具 -->
+    <h3 class="prose" style="font-family:var(--serif)">C · 熟練鋼筆工具（Pen Tool）</h3>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>深入掌握鋼筆工具（快捷鍵 <span class="kbd">P</span>）的核心操作：錨點新增與刪除、貝茲曲線控制把手的調整、直線段與曲線段的切換，以及複雜輪廓路徑的繪製。鋼筆工具是 Illustrator 最重要的基本功，也是區分「能用軟體」與「會用軟體」的關鍵分水嶺。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>繪製直線段</h4>
+        <p>選鋼筆工具（<span class="kbd">P</span>）後，於畫布點擊第一個錨點，再點第二個，兩點自動連成直線段。按住 <span class="kbd">Shift</span> 點擊可鎖定 45 度倍數方向。按 <span class="kbd">Enter</span> 或切換工具可結束路徑；若要封閉，將最後一點接回起點（游標出現小圓圈提示）。</p>
+      </div>
+      <div class="step">
+        <h4>繪製曲線段</h4>
+        <p>點擊產生第一個錨點後，<strong>按住滑鼠左鍵拖曳</strong>，會拉出兩條對稱「方向把手」，把手長度與角度決定曲線的曲率與方向。到下一個位置同樣點擊並拖曳，即可產生平滑 S 型曲線。<span class="kw">把手越長曲率越大</span>。</p>
+      </div>
+      <div class="step">
+        <h4>切換直線與曲線</h4>
+        <p>畫曲線後若想接一段直線，按 <span class="kbd">Alt</span> 點擊剛建立的錨點，可收回前進方向的把手，下一段即為直線。反之，從直線轉曲線則在最後一個錨點上按 <span class="kbd">Alt</span> 拖曳拉出新把手。<strong>每個錨點的「進入把手」與「離開把手」可獨立控制</strong>，這是鋼筆工具最關鍵的觀念。</p>
+      </div>
+      <div class="step">
+        <h4>編輯既有路徑</h4>
+        <p><strong>新增錨點：</strong>游標移至路徑線段上變「鋼筆 +」即可點擊新增。<strong>刪除錨點：</strong>移至錨點上變「鋼筆 −」點擊刪除。<strong>轉換錨點：</strong>用錨點工具（<span class="kbd">Shift + C</span>）點曲線錨點轉尖角、拖曳尖角轉平滑。<strong>移動錨點：</strong>用直接選取工具（<span class="kbd">A</span>）點選後拖曳，方向鍵微調 1px（<span class="kbd">Shift</span> 為 10px）。</p>
+      </div>
+      <div class="step">
+        <h4>封閉路徑與綜合練習</h4>
+        <p>以照片零件為底圖，沿輪廓依序點擊或拖曳產生錨點，最後回到起點封閉路徑。<strong>封閉後的路徑才能套用填色與雷切輸出</strong>，未封閉路徑在雷切軟體中可能被忽略或產生錯誤。練習目標：以最少的錨點數量描出最平滑的輪廓——錨點越少，曲線越優雅，後續編輯也越容易。</p>
+      </div>
+    </div>
+
+    <div class="shortcuts">
+      <h3>鋼筆工具相關快捷鍵</h3>
+      <p class="sc-note">建議列印成 A5 小卡放在電腦旁參照</p>
+      <div class="sc-grid">
+        <div class="sc-row"><span class="sc-key">P</span><span class="sc-desc">鋼筆工具</span></div>
+        <div class="sc-row"><span class="sc-key">Shift + C</span><span class="sc-desc">錨點轉換工具</span></div>
+        <div class="sc-row"><span class="sc-key">+ / −</span><span class="sc-desc">新增 / 刪除錨點</span></div>
+        <div class="sc-row"><span class="sc-key">A</span><span class="sc-desc">直接選取（編輯單一錨點）</span></div>
+        <div class="sc-row"><span class="sc-key">V</span><span class="sc-desc">選取工具（整條路徑）</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + J</span><span class="sc-desc">連接兩端點為封閉路徑</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + Y</span><span class="sc-desc">切換輪廓檢視（檢查封閉）</span></div>
+        <div class="sc-row"><span class="sc-key">Shift 按住</span><span class="sc-desc">鎖定 45 度方向</span></div>
+        <div class="sc-row"><span class="sc-key">Alt 按住</span><span class="sc-desc">收回單邊把手 / 複製拖曳</span></div>
+        <div class="sc-row"><span class="sc-key">空白鍵</span><span class="sc-desc">暫時切換手形工具平移</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>強調「以最少錨點繪出最平順曲線」的設計原則，並建議學生多花時間練習曲線把手的拖曳手感——這是無法靠閱讀理解、只能靠肌肉記憶熟練的技能。教學提示：可請學生臨摹幾個常見 LOGO（如 Apple、Nike）作為鋼筆熱身練習，約需 2–3 小時可達到基本流暢度。</p>
+    </div>
+
+    <!-- 完整快捷鍵清單 -->
+    <h3 class="prose" style="font-family:var(--serif)">D · Illustrator 常用快捷鍵清單</h3>
+    <div class="shortcuts">
+      <h3>Illustrator 快捷鍵速查</h3>
+      <p class="sc-note">必背三組：<b style="color:#ffd9a8">P</b>（鋼筆）、<b style="color:#ffd9a8">Ctrl+Y</b>（輪廓檢視，檢查封閉）、<b style="color:#ffd9a8">Ctrl+Shift+O</b>（文字建立外框，雷切必做）</p>
+      <div class="sc-grid">
+        <div class="sc-grp">視角與檢視</div>
+        <div class="sc-row"><span class="sc-key">Ctrl + +/−</span><span class="sc-desc">放大 / 縮小</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + 0</span><span class="sc-desc">符合視窗</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + 1</span><span class="sc-desc">100% 實際大小</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + Y</span><span class="sc-desc">輪廓 / 預覽檢視</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + R</span><span class="sc-desc">顯示 / 隱藏尺標</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + ;</span><span class="sc-desc">顯示 / 隱藏參考線</span></div>
+        <div class="sc-grp">選取工具</div>
+        <div class="sc-row"><span class="sc-key">V</span><span class="sc-desc">選取工具</span></div>
+        <div class="sc-row"><span class="sc-key">A</span><span class="sc-desc">直接選取工具</span></div>
+        <div class="sc-row"><span class="sc-key">Y</span><span class="sc-desc">魔術棒</span></div>
+        <div class="sc-row"><span class="sc-key">Q</span><span class="sc-desc">套索</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + A</span><span class="sc-desc">全選</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl+Shift+A</span><span class="sc-desc">取消全選</span></div>
+        <div class="sc-grp">繪圖工具</div>
+        <div class="sc-row"><span class="sc-key">P</span><span class="sc-desc">鋼筆工具</span></div>
+        <div class="sc-row"><span class="sc-key">M</span><span class="sc-desc">矩形工具</span></div>
+        <div class="sc-row"><span class="sc-key">L</span><span class="sc-desc">橢圓工具</span></div>
+        <div class="sc-row"><span class="sc-key">N</span><span class="sc-desc">鉛筆工具</span></div>
+        <div class="sc-row"><span class="sc-key">Shift + M</span><span class="sc-desc">形狀建立工具</span></div>
+        <div class="sc-row"><span class="sc-key">Shift + N</span><span class="sc-desc">實時上色油漆桶</span></div>
+        <div class="sc-grp">物件編輯</div>
+        <div class="sc-row"><span class="sc-key">Ctrl + G</span><span class="sc-desc">群組</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl+Shift+G</span><span class="sc-desc">取消群組</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + D</span><span class="sc-desc">再次變形</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + J</span><span class="sc-desc">連接端點</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + 2</span><span class="sc-desc">鎖定選取</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + ]</span><span class="sc-desc">上移一層</span></div>
+        <div class="sc-grp">變形與輸出</div>
+        <div class="sc-row"><span class="sc-key">Shift 拖曳</span><span class="sc-desc">鎖定 45 度 / 等比例</span></div>
+        <div class="sc-row"><span class="sc-key">Alt 拖曳</span><span class="sc-desc">複製並移動</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl+Shift+O</span><span class="sc-desc">文字建立外框 <span class="sc-star">★</span></span></div>
+        <div class="sc-row"><span class="sc-key">Shift+Ctrl+F9</span><span class="sc-desc">路徑管理員（雷切常用）</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl+Alt+E</span><span class="sc-desc">輸出 Export</span></div>
+        <div class="sc-row"><span class="sc-key">Ctrl + S</span><span class="sc-desc">儲存</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 第二節 ============ -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>製圖</b></div>
+      <div><h2>動手繪製製作說明圖</h2><div class="lh-sub">把實體物體轉化為清晰精確的加工說明圖</div></div>
+    </div>
+    <p class="prose lead-p">本節進入實務階段，學員將親手使用 Illustrator 製作精美的產品製作說明圖，以電子產品外殼拆解圖為範例，學習如何將實體物體轉化為清晰、精確的加工說明圖。</p>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--accent)">圖</div><div><h3>本節四大學習要點</h3><div class="ch-sub">從拆解到應用的完整製圖思維</div></div></div>
+      <ul class="keylist">
+        <li><strong>零件拆解與排列：</strong>將完整產品拆解成各個獨立零件，以爆炸展開圖的方式有條理地排列，讓閱讀者一目了然各零件的形狀與對應關係。</li>
+        <li><strong>精確運用工具：</strong>以鋼筆工具與幾何圖形工具切實繪製每個零件外形，包含卡榫、孔洞、凹槽等細節，訓練對形狀的觀察力與線條的精準控制。</li>
+        <li><strong>線條規範與圖層管理：</strong>學習工程製圖的基本規範，統一線條粗細、色彩與風格，並以圖層分類管理不同零件，養成專業檔案整理習慣。</li>
+        <li><strong>說明圖的應用架構：</strong>完成的零件展開圖可應用於產品說明書、建造指南、專利申請附圖或製造規格文件，是工業設計與產品開發流程中的視覺溝通工具。</li>
+      </ul>
+    </div>
+    <div class="shot tall">
+      <svg class="shot-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+      <div class="shot-t">版位預留：電子鋼琴零件爆炸展開圖範例</div>
+      <div class="shot-d">放學生或老師繪製的向量爆炸圖，標註卡榫、孔洞與組裝關係</div>
+      <div class="shot-tag">IMG · exploded-diagram</div>
+    </div>
+  </section>
+
+  <!-- ============ 第三節 ============ -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>雷切</b></div>
+      <div><h2>雷切實驗製作與假組</h2><div class="lh-sub">切割後檢驗與迭代修正</div></div>
+    </div>
+    <p class="prose lead-p">本節完成最關鍵的實體驗證階段——將前兩節繪製的向量圖檔送入雷射切割機進行實際切割，並透過「假組」過程檢驗設計的密合度與精確度。</p>
+
+    <div class="steps">
+      <div class="step">
+        <h4>雷射切割前的文件準備</h4>
+        <p>將 Illustrator 中不同的零件圖依雷切機規格輸出設定，包含<span class="kw">線條顏色區分切割與刻線</span>、確認尺寸比例為 1:1、排版省料等，讓圖檔能被機器正確讀取與執行。</p>
+      </div>
+      <div class="step">
+        <h4>實驗性切割</h4>
+        <p>以實驗心態進行第一次切割，目的不求完美，而是透過實際材料（木板、壓克力）的切割結果，觀察零件尺寸是否吻合、卡榫是否能順利嵌合、間隙是否需要修改。</p>
+      </div>
+      <div class="step">
+        <h4>假組驗證</h4>
+        <p>將切割完成的零件進行「假組」——即不上膠、不固定，純粹手動試拼初組，逐一檢查每個部件的相對位置與裝配度，找出設計上的疏漏。</p>
+      </div>
+      <div class="step">
+        <h4>發現問題 → 解決問題</h4>
+        <p>假組過程中一旦發現問題，立即回 Illustrator 修改圖檔、重新驗證切割，形成「<strong>設計 → 製作 → 檢驗 → 修正</strong>」的迭代循環，培養解決實務問題的應變能力，這也是從圖紙走向最真實的學習歷程。</p>
+      </div>
+    </div>
+
+    <div class="worksheet">
+      <div class="ws-head">
+        <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 2-1｜向量繪圖與雷切迭代</h3><div class="ws-kind">Vector &amp; Laser Worksheet</div></div></div>
+        <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+      </div>
+      <div class="ws-body">
+        <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">「自動描圖」與「手動描圖」各有什麼優缺點？雷切用途為什麼建議用手動？</span>
+          <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+        <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">為什麼路徑一定要「封閉」？用什麼快捷鍵可以檢查路徑是否封閉？</span>
+          <div class="ws-lines"><div class="ws-line"></div></div></div>
+        <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">第一次雷切假組時，你發現了哪些問題？回到 Illustrator 做了什麼修改？</span>
+          <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+        <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">自我檢核（完成請打勾）</span>
+          <div class="ws-check">
+            <label><span class="ws-box"></span>能新建文件並設定 mm 單位</label>
+            <label><span class="ws-box"></span>會用鋼筆畫封閉路徑</label>
+            <label><span class="ws-box"></span>能完成一張零件說明圖</label>
+            <label><span class="ws-box"></span>完成一次假組驗證</label>
+          </div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule heavy">
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>鋼筆工具是本週的硬骨頭，建議「先示範、再臨摹、後實作」。把全班卡最久的地方（曲線把手手感）安排足夠練習時間，不要急著進到說明圖。學生一旦突破鋼筆，後面所有數位製作都會順很多。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-01.html"><span class="pg-dir">← 上一週</span><span class="pg-t">觀察、拆解、重組</span></a>
+  <a class="next" href="week-03.html"><span class="pg-dir">下一週 →</span><span class="pg-t">機構基礎：孔位與間距</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

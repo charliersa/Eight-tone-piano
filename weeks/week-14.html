@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 14 週 · 三色畫板 + AI 生圖 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+<style>
+  .promptbox{background:#1e1b16;color:#ece6da;border-radius:8px;padding:16px 18px;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.75}
+  .promptbox .pl{color:#ffd9a8}
+  .formula{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+  .formula .fk{background:var(--accent-wash);border:1px solid var(--accent-line);color:var(--accent-deep);border-radius:6px;padding:6px 12px;font-size:13px;font-weight:600}
+  .formula .fp{color:var(--ink-faint);font-size:16px}
+</style>
+</head>
+<body data-depth="1" data-page="weeks/week-14.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段五 · 多色列印與 AI</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 14 週</span>&nbsp;·&nbsp;AI × 多色列印</div>
+    <h1>三色畫板<br>用 AI 生圖做多色作品</h1>
+    <p class="week-lead">本週製作「三色畫板」——把一張圖轉成多色 3D 列印的平面作品。先用 AI（ChatGPT 內建影像生成）生成要列印的圖案，認識 AI 作為創作工具的用法與提示詞技巧；接著在 Bambu Studio 把圖片轉成多色畫板設定，最後實際列印出一塊可掛、可展示的三色畫作，體驗「AI 生圖 → 軟體轉檔 → 多色列印」的新工作流。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">新工作流 <b>AI → 轉檔 → 列印</b></span>
+      <span class="chip">工具：ChatGPT / Bambu Studio</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>AI</b></div>
+      <div><h2>AI 生成畫面</h2><div class="lh-sub">會用 AI 當工具，也會挑適合的圖</div></div>
+    </div>
+    <p class="prose lead-p">本節用 ChatGPT（內建影像生成功能）作為生圖工具。學生只要用文字描述想要的畫面，ChatGPT 就會自動產生對應圖片，不需具備繪畫基礎，最適合作為三色畫板的圖案來源。</p>
+
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">序</div><div><h3>核心觀念：提示詞的「前後順序」很重要</h3></div></div>
+      <p class="prose" style="margin:0 0 8px">AI 生圖時，<strong>越前面的詞權重越高、越會被優先呈現</strong>；越後面的詞則偏向補充。所以要把「最想突顯的主角與重點」放在最前面，把次要的背景、細節、風格修飾放後面。</p>
+      <p class="prose" style="margin:0"><strong>舉例比較：</strong>①「紅磚煙囪，扁平插畫，三色，白底」→ 煙囪是主角、清楚置中；②「白色背景，三種顏色，有一個煙囪」→ 主角被弱化、構圖鬆散。同樣的元素、不同順序，產出差很多。</p>
+    </div>
+
+    <p class="prose"><strong>排列原則：</strong>建議依下列順序由重到輕排列——</p>
+    <div class="formula">
+      <span class="fk">主角</span><span class="fp">→</span>
+      <span class="fk">動作／特徵</span><span class="fp">→</span>
+      <span class="fk">風格</span><span class="fp">→</span>
+      <span class="fk">顏色</span><span class="fp">→</span>
+      <span class="fk">構圖</span><span class="fp">→</span>
+      <span class="fk">背景</span><span class="fp">→</span>
+      <span class="fk">用途</span>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--tech)">譯</div><div><h3>中文先想、再轉英文 prompt</h3><div class="ch-sub">不會英文也能寫出精準 prompt</div></div></div>
+      <p class="prose" style="margin:0 0 8px">AI 生圖以英文 prompt 的效果通常較好。引導學生先用中文把想要的畫面想清楚、寫成中文提示詞，再請 ChatGPT「把這段中文翻成適合 AI 生圖的英文 prompt」，最後用產生的英文 prompt 生成圖片。學生不必會英文，同時學到「<span class="kw">中文構思 → 英文 prompt → 生圖</span>」的實用流程。</p>
+      <div class="promptbox"><span class="pl">轉換指令範例：</span><br>「請把下面這段中文，翻譯成適合 AI 生圖的英文 prompt，風格扁平向量、三色、高對比、白底：〔貼上你的中文提示詞〕」</div>
+    </div>
+
+    <h3 class="prose" style="font-family:var(--serif)">提示詞公式</h3>
+    <div class="promptbox">請畫一張〔<span class="pl">主題</span>〕，〔<span class="pl">風格</span>〕，只用〔<span class="pl">三種顏色</span>〕，色塊分明、輪廓清楚、高對比，背景〔<span class="pl">單色／白色</span>〕，置中構圖，扁平向量風格，適合做三色 3D 列印掛畫。</div>
+
+    <table class="tbl">
+      <thead><tr><th style="width:24%">範例主題</th><th>提示詞</th></tr></thead>
+      <tbody>
+        <tr><td class="em">在地主題</td><td>請畫一張新營糖廠的紅磚煙囪，扁平插畫風格，只用黑、紅、米白三種顏色，色塊分明、輪廓清楚、高對比，白色背景，置中構圖，適合做三色 3D 列印掛畫。</td></tr>
+        <tr><td class="em">音樂主題</td><td>請畫一個簡約的音符與五線譜圖案，扁平向量風格，只用深藍、淺藍、白三色，色塊分明、線條俐落，背景單色，置中構圖。</td></tr>
+        <tr><td class="em">電子鋼琴</td><td>請畫一台可愛的電子鋼琴，扁平插畫、無漸層，只用三種對比色，輪廓粗、細節少，白底置中。</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--green)">中</div><div><h3>中文 → 英文 prompt 對照範例</h3></div></div>
+      <p class="prose" style="margin:0 0 6px"><strong>中文：</strong>請畫一張新營糖廠的紅磚煙囪，扁平插畫風格，只用黑、紅、米白三色，色塊分明、高對比，白色背景，置中構圖，適合做三色 3D 列印掛畫。</p>
+      <div class="promptbox"><span class="pl">英文 prompt：</span><br>A red-brick factory chimney of Xinying Sugar Refinery, flat illustration style, only three colors (black, red, cream white), bold color blocks, high contrast, clear outlines, white background, centered composition, minimal details, suitable for tri-color 3D printed wall art.</div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><h4>用 ChatGPT 生圖</h4><p>① 打開 ChatGPT，輸入畫面描述（提示詞）；② 看產出的圖，不滿意就追加修改指令（如「再簡化一點」「改成三種顏色」「對比再強一點」「去掉背景雜物」「線條再粗一點」）來回調整；③ 滿意後把圖片存到電腦。</p></div>
+      <div class="step"><h4>挑選與調整</h4><p>產生多張後挑出最適合做三色畫板的——<span class="kw">構圖簡單、色塊分明、對比清楚</span>的圖最好轉色；太複雜、漸層太多的圖分色後容易雜亂。</p></div>
+      <div class="step"><h4>為轉色預先準備</h4><p>因為下一節要轉成三色畫板，生圖時就先請 ChatGPT 產出「色塊分明、顏色數少、對比強」的圖；這樣的圖在第二節分色時輪廓才會清楚、不雜亂。把選好的圖存好，帶到第二節。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>讓學生實際把同一組詞「換順序」各生一次圖、比較差異，親手體會「<strong>順序＝重點權重</strong>」；再比較「直接用中文生圖」與「轉成英文 prompt 再生圖」的差異——通常英文 prompt 的構圖與配色更貼近指定需求。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>本節重點是「<strong>會用 AI 當工具</strong>」與「<strong>會挑適合的圖</strong>」——提醒學生 AI 是輔助創意的工具，挑圖與後續設計仍需自己的美感判斷；同時可簡單帶到生成內容的著作權與正確使用觀念。</p></div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>轉檔</b></div>
+      <div><h2>Bambu Studio 畫板設定</h2><div class="lh-sub">把圖片轉成多色畫板</div></div>
+    </div>
+    <p class="prose lead-p">承接第一節產生的圖片，本節在 Bambu Studio 把圖片轉成「多色畫板」——一塊用不同顏色線材分層堆疊呈現圖案的平面作品，呼應第五週介紹過的彩色畫板功能。</p>
+    <div class="steps">
+      <div class="step"><h4>匯入圖片</h4><p>於 Bambu Studio 開啟畫板／圖片轉換功能（如 Maker Lab 的圖片轉浮雕或彩色畫板），匯入第一節準備好的圖片。</p></div>
+      <div class="step"><h4>設定畫板尺寸與顏色數</h4><p>設定畫板長寬與厚度，並指定使用幾種顏色（搭配 AMS 通常 3～4 色）；軟體會把圖片依明暗或色塊分配到不同顏色的線材層。</p></div>
+      <div class="step"><h4>調整分色與層次</h4><p>預覽分色結果，調整對比、色階或顏色對應，讓圖案輪廓清楚、層次分明；<span class="kw">三色畫板建議選對比明顯的圖</span>，效果最好。</p></div>
+      <div class="step"><h4>指定 AMS 槽位</h4><p>把畫面上每個顏色對應到 AMS 第 1～4 號槽位實際載入的線材顏色，確認螢幕配色與實際線材一致。</p></div>
+      <div class="step"><h4>切片預覽</h4><p>完成後切片，於預覽確認換色點與廢料塔位置、預估時間與耗材；確認無誤即可輸出列印檔。</p></div>
+    </div>
+    <div class="tip"><div class="block-label">💡 選對圖、分色清楚</div><p>三色畫板的關鍵在「選對圖」與「分色清楚」——對比強、色塊分明的圖最適合；顏色越多、換色越頻繁，列印時間與耗材也越多。</p></div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>列印</b></div>
+      <div><h2>多色畫板列印</h2><div class="lh-sub">完成一塊可掛、可展示的三色畫作</div></div>
+    </div>
+    <p class="prose lead-p">承接第二節的畫板設定，本節把設定好的多色畫板實際列印出來。</p>
+    <div class="steps">
+      <div class="step"><h4>列印前確認</h4><p>檢查 AMS 各槽位線材顏色與設定相符、平台清潔、線材充足；多色列印時間較長，建議課堂上先送印、利用等待時間做其他收尾。</p></div>
+      <div class="step"><h4>監看換色與廢料塔</h4><p>多色列印每次換色會在<span class="kw">廢料塔</span>清出舊色，屬正常現象；觀察首層附著與前幾次換色是否順利，確認顏色乾淨不混色。</p></div>
+      <div class="step"><h4>取件與展示</h4><p>列印完成、降溫後取下畫板，背面可加掛孔或立架；成品可作為電子鋼琴盒的搭配掛飾，或單獨作為個人創作展示。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>同一張圖，用「多色畫板（換色列印）」與「列印後手工上色」呈現，各有什麼優缺點？引導學生比較——<strong>換色列印精準但耗時耗材、手工上色自由但考驗技巧</strong>，呼應第十三週的上色經驗。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>本週讓學生體驗「AI 生圖 → 軟體轉檔 → 多色列印」的新工作流，看見 3D 列印不只做立體零件，也能做平面色彩作品，拓展對工具的想像。</p></div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 14-1｜AI 生圖與多色畫板</h3><div class="ws-kind">AI &amp; Multicolor Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">寫下你最後採用的中文提示詞：</span>
+        <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">把同一組詞「換順序」生圖，結果有什麼不同？這說明了什麼？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">你的三色畫板選了哪三色？分別對應 AMS 第幾槽？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">「換色列印」與「手工上色」你比較喜歡哪一種？為什麼？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>這週把「AI 素養」自然融進創客流程。重點不是「AI 很神」，而是「會下指令、會挑結果、懂版權」。讓學生親手體驗順序與語言對產出的影響，比講原理更有感。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-13.html"><span class="pg-dir">← 上一週</span><span class="pg-t">外盒上色</span></a>
+  <a class="next" href="week-15.html"><span class="pg-dir">下一週 →</span><span class="pg-t">畫板配色與完成</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5 週 · 3D 列印機器與材料認識 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-05.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段二 · 機構與 3D 建模</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 5 週</span>&nbsp;·&nbsp;機器與材料</div>
+    <h1>3D 列印機器與<br>材料基本認識</h1>
+    <p class="week-lead">本週聚焦於 3D 列印的實體操作與材料特性。學生將實際接觸列印機器的安裝、校正、操作流程，並認識不同列印材料（PLA、PETG、ABS 等）的物理特性與適用情境，為作品的材料選擇提供判斷依據。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">重點 <b>安全 · 選材 · 換色</b></span>
+      <span class="chip">機型：Bambu A1 / P1S / X1C</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>操作</b></div>
+      <div><h2>3D 列印機基本操作與設定</h2><div class="lh-sub">開關機 · 校正 · 換料 · 送印</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>熟悉 3D 列印機的開關機、平台校正、換料、列印啟動與中止等基本操作。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>機器各部位介紹</h4>
+        <p><strong>列印頭（Hotend）：</strong>加熱與擠出線材，180–260°C，操作中嚴禁觸碰。<strong>熱床（Heat Bed）：</strong>列印平台 50–80°C，PEI 磁吸板可拆卸取件。<strong>線材軸：</strong>放 1kg 線材軸；Bambu 另有 AMS 多料盤。<strong>觸控螢幕：</strong>主要操作介面。<strong>電源開關：</strong>列印中切勿關閉。</p>
+        <p class="muted keyline">教學提示：建議學生繞機一圈，親手指認每個部位並複述名稱，建立空間記憶。</p>
+      </div>
+      <div class="step">
+        <h4>自動平台校正示範</h4>
+        <p><strong>為什麼校正：</strong>噴頭與熱床要保持「一張 A4 紙的厚度」（約 0.1mm），距離不對會導致首層脫落或刮花平台。Bambu 開機後自動執行震動補償、流量校準、Z 軸偏移校正，約 5–8 分鐘，過程中請勿觸碰。螢幕顯示<span class="kw">綠色勾號</span>後才可開始列印。</p>
+      </div>
+      <div class="step">
+        <h4>換料操作練習</h4>
+        <p><strong>卸料：</strong>螢幕「換料 → 卸料」，噴頭加熱至 220°C 後緩慢抽出舊線材。<strong>裝料：</strong>新線材末端剪 45° 斜角，插入進線孔，點「進料」自動推送至噴頭。<strong>排料：</strong>「擠出 100mm」觀察出料是否順暢、顏色是否純淨。<strong>換料是最容易出錯的環節，建議分組練習 2–3 次。</strong></p>
+      </div>
+      <div class="step">
+        <h4>傳輸切片檔並啟動列印</h4>
+        <p>三種傳輸擇一（雲端 / SD 卡 / LAN）。<strong>列印前最後檢查：</strong>平台清潔無殘膠？線材足夠？噴頭歸位無殘料？周圍淨空？啟動後機器先加熱 3–5 分鐘再列印；<strong>前 5 分鐘首層最關鍵</strong>，若翹邊脫落立即停止重新校正。完成後等熱床降至 40°C 以下再取件。</p>
+      </div>
+    </div>
+
+    <div class="safety">
+      <div class="card-head"><div class="card-glyph">⚠</div><div><h3>3D 列印安全守則</h3><div class="ch-sub">列印頭 200°C＋、熱床 60°C＋</div></div></div>
+      <ul>
+        <li><strong>高溫警告：</strong>噴頭 200°C 以上、熱床 60°C 以上，列印中與剛結束 10 分鐘內嚴禁觸碰。</li>
+        <li><strong>移動部件：</strong>列印中噴頭與平台高速移動，手部、頭髮、衣物切勿靠近。</li>
+        <li><strong>通風需求：</strong>ABS / PETG 列印會釋放微量揮發物，建議於通風處或加裝活性碳濾網。</li>
+        <li><strong>線材保存：</strong>開封後放入防潮箱（PLA 易吸濕變脆），避免噴頭噗噗作響或斷料。</li>
+        <li><strong>緊急停止：</strong>螢幕有「暫停 / 停止」；若異常（撞機、冒煙、異味）立即關閉後方總電源。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--safe)">!</div><div><h3>常見問題排除</h3></div></div>
+      <table class="tbl" style="box-shadow:none;margin:6px 0 0">
+        <tbody>
+          <tr><td class="em" style="width:30%">首層黏不住</td><td>檢查熱床溫度（PLA 60°C / PETG 70°C）、清潔平台、增加 Brim、降低 Z 軸偏移。</td></tr>
+          <tr><td class="em">噴頭堵塞</td><td>「擠出 100mm」測試，加熱至 230°C 反覆抽插線材清通。</td></tr>
+          <tr><td class="em">線材打結</td><td>暫停列印、解開纏繞、執行「進料」即可續印。</td></tr>
+          <tr><td class="em">中途位移</td><td>皮帶鬆動或物件未黏牢，重新校正並降低列印速度。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>材料</b></div>
+      <div><h2>3D 列印材料特性認識</h2><div class="lh-sub">為作品選對材料是從「會列印」進階到「設計者」的關鍵</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識常見列印線材的特性差異，能根據作品用途選擇合適的材料。引導學生思考「材料 ↔ 用途」的對應關係，例如外殼宜用 PLA、活動關節宜用 TPU。</p>
+    </div>
+
+    <div class="compare">
+      <div class="mat">
+        <div class="mat-top"><span class="mat-emoji">🌽</span><div><h4>PLA</h4><div class="mat-tag">聚乳酸 · 入門首選</div></div></div>
+        <dl>
+          <dt>來源</dt><dd>玉米／甘蔗，可生物分解</dd>
+          <dt>溫度</dt><dd>噴頭 190–220°C / 床 50–60°C</dd>
+          <dt>特性</dt><dd>硬、表面光滑，但脆易裂</dd>
+          <dt>耐熱</dt><dd>約 60°C（不耐曬）</dd>
+          <dt>難度</dt><dd><span class="diff">★</span>☆☆☆☆ 最簡單</dd>
+          <dt>用途</dt><dd>展示模型、外殼裝飾、不承重件</dd>
+        </dl>
+      </div>
+      <div class="mat">
+        <div class="mat-top"><span class="mat-emoji">🧴</span><div><h4>PETG</h4><div class="mat-tag">全能型 · 強度＋韌性</div></div></div>
+        <dl>
+          <dt>來源</dt><dd>寶特瓶塑料改良版</dd>
+          <dt>溫度</dt><dd>噴頭 230–250°C / 床 70–80°C</dd>
+          <dt>特性</dt><dd>韌，受撞會彎不會碎</dd>
+          <dt>耐熱</dt><dd>約 80°C（可短暫接觸熱水）</dd>
+          <dt>難度</dt><dd><span class="diff">★★★</span>☆☆ 易牽絲</dd>
+          <dt>用途</dt><dd>機構功能件、卡榫、承重支架</dd>
+        </dl>
+      </div>
+      <div class="mat">
+        <div class="mat-top"><span class="mat-emoji">🌀</span><div><h4>TPU</h4><div class="mat-tag">彈性 · 可彎折</div></div></div>
+        <dl>
+          <dt>來源</dt><dd>熱塑性彈性體，介於塑膠與橡膠</dd>
+          <dt>溫度</dt><dd>噴頭 220–240°C / 床 40–60°C</dd>
+          <dt>特性</dt><dd>極軟，可彎折壓縮不破</dd>
+          <dt>耐熱</dt><dd>約 80°C，耐磨抗撕裂</dd>
+          <dt>難度</dt><dd><span class="diff">★★★★</span>☆ 需慢速</dd>
+          <dt>用途</dt><dd>防震墊、握把、彈性卡扣</dd>
+        </dl>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>比較項目</th><th>排序（由前到後）</th></tr></thead>
+      <tbody>
+        <tr><td class="em">硬度</td><td>PLA（最硬，易碎）&gt; PETG（中硬有韌性）&gt; TPU（極軟可彎折）</td></tr>
+        <tr><td class="em">韌性</td><td>TPU（最韌）&gt; PETG &gt; PLA（脆）</td></tr>
+        <tr><td class="em">耐熱性</td><td>PETG ≈ TPU（約 80°C）&gt; PLA（約 60°C）</td></tr>
+        <tr><td class="em">列印難度</td><td>PLA（最簡單）&lt; PETG（中等）&lt; TPU（較難）</td></tr>
+        <tr><td class="em">環保性</td><td>PLA（可生物分解）&gt; PETG（可回收）&gt; TPU（難回收）</td></tr>
+        <tr><td class="em">價格 /kg</td><td>PLA NT$500–800 &lt; PETG NT$700–1000 &lt; TPU NT$900–1500</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">?</div><div><h3>「作品 → 材料」選材判斷流程</h3><div class="ch-sub">五個問題決定用什麼料</div></div></div>
+      <ul class="keylist">
+        <li><strong>Q1</strong> 需要「彎折或受擠壓」嗎？→ 是 → 選 <span class="kw">TPU</span></li>
+        <li><strong>Q2</strong> 會「受力、承重、頻繁拆裝」嗎？→ 是 → 選 <span class="kw">PETG</span></li>
+        <li><strong>Q3</strong> 只是「展示用、不受力、外觀為主」？→ 是 → 選 <span class="kw">PLA</span></li>
+        <li><strong>Q4</strong> 會「曬太陽或接觸熱水」？→ 是 → 至少 PETG，避免 PLA</li>
+        <li><strong>Q5</strong> 需要「食品級接觸」？→ 是 → 選通過認證的 PETG</li>
+      </ul>
+    </div>
+
+    <div class="local">
+      <div class="card-head"><div class="card-glyph">琴</div><div><h3>電子鋼琴專題的選材建議</h3><div class="ch-sub">對應作品需求挑料</div></div></div>
+      <p><strong>雷切外殼搭配的裝飾件</strong> → PLA（輕量、好上色、不受力）<br>
+      <strong>按鈕底座、固定座、螺絲柱</strong> → PETG（承受按壓與螺絲鎖固）<br>
+      <strong>防震墊、按鈕觸感片</strong> → TPU（柔軟有彈性，模擬鋼琴琴鍵手感）</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--tech)">＋</div><div><h3>其他延伸材料（進階認識）</h3></div></div>
+      <table class="tbl" style="box-shadow:none;margin:6px 0 0">
+        <tbody>
+          <tr><td class="em" style="width:26%">ABS</td><td>樂高材料，強度高耐熱約 100°C，但有刺鼻氣味、翹邊嚴重，教學環境不建議。</td></tr>
+          <tr><td class="em">ASA</td><td>ABS 戶外版，抗紫外線不易變黃，適合戶外標示牌、車載零件。</td></tr>
+          <tr><td class="em">Nylon 尼龍</td><td>極高韌性耐磨，用於齒輪軸承，但易吸濕需防潮箱。</td></tr>
+          <tr><td class="em">PC 聚碳酸酯</td><td>透明極硬耐熱約 150°C，用於透明燈罩；列印難度高。</td></tr>
+          <tr><td class="em">碳纖／玻纖</td><td>提升剛性與抗彎，但會磨損噴頭，需硬化鋼噴頭。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><div class="block-label">💡 動手體驗</div><p>讓學生實際觸摸三種樣品（PLA 硬塊、PETG 小卡榫、TPU 薄片），親手「掰一掰、彎一彎」，比看十頁規格表更能建立材料直覺。</p></div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>換色</b></div>
+      <div><h2>Bambu Studio 彩色畫板生成器</h2><div class="lh-sub">不換噴頭就能做多色作品</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識 Bambu Studio 內建的「彩色畫板（Color Painting）生成器」，學會在不更換噴頭、不手動換料的前提下，為單一模型指定多種顏色或材質分區，並理解搭配 AMS 多料盤自動換色的運作原理。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>進入塗色工具</h4>
+        <p>選取模型後，於左側工具列點「塗色（Color Painting）」筆刷圖示（或按 <span class="kbd">N</span>），畫面上方出現色盤與筆刷參數面板。</p>
+      </div>
+      <div class="step">
+        <h4>指定顏色與 AMS 槽位</h4>
+        <p>上方色盤每格對應 AMS 第 1–4 號槽位的線材顏色；先點色盤顏色，再到模型上塗刷。建議先於「線材」面板確認每槽實際載入的顏色，避免成品與螢幕配色不符。</p>
+      </div>
+      <div class="step">
+        <h4>分區塗色</h4>
+        <p>調整筆刷大小後，選 Sphere（球形範圍）或 Triangle（單一三角面）模式塗色；用「Bucket fill（油漆桶）」一鍵填滿連續同色面，按 <span class="kbd">Esc</span> 退出。塗錯按右鍵或「Clear painting」重來。</p>
+      </div>
+      <div class="step">
+        <h4>分層換色（無 AMS 機型替代法）</h4>
+        <p>若機型沒有 AMS（如 A1 mini 單機版），切片後切到「預覽」，於層數滑桿旁 <span class="kbd">+</span> 在指定層數插入「換色點（Change filament）」，機器會在該層暫停提示手動換料，做出水平分色。</p>
+      </div>
+      <div class="step">
+        <h4>切片與廢料塔確認</h4>
+        <p>塗色後切片，預覽會出現「<span class="kw">廢料塔（Purge Tower）</span>」——每次換色需先清出舊色殘料，換色越多耗時耗材越多（每次約 30–60 秒、2–5g）。確認廢料塔位置不影響主體即可列印。</p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="block-label">❓ 教學提問引導</div>
+      <p>同一個多色作品，用「塗色＋AMS 自動換色」與「分件列印不同色線材再組裝」兩種做法，哪一種較省時？哪一種顏色交界較乾淨？</p>
+      <p style="margin-top:8px"><strong>引導理解：</strong>細緻的圖案分色適合塗色；而像琴鍵黑白相間這類獨立零件，分件列印純色再組裝反而更俐落，也方便單獨更換。</p>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>帶領學生理解「<strong>切片軟體是設計與機器之間的橋樑</strong>」，善用工具能大幅提升成品品質與成功率。</p>
+    </div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 5-1｜選材決策</h3><div class="ws-kind">Material Selection Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">親手掰過三種樣品後，用一個形容詞描述各自的手感：PLA＿＿＿、PETG＿＿＿、TPU＿＿＿。</span></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">你的電子鋼琴「固定座」要承受螺絲鎖固，應該選哪種材料？為什麼？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">「彩色畫板」與「分件列印純色再組裝」各適合什麼情況？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">安全自我檢核</span>
+        <div class="ws-check">
+          <label><span class="ws-box"></span>知道噴頭/熱床高溫不可碰</label>
+          <label><span class="ws-box"></span>會操作換料</label>
+          <label><span class="ws-box"></span>會用選材流程判斷</label>
+        </div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>安全是這一週的第一順位。建議用「先簽安全守則、再碰機器」的儀式感，讓學生認真看待高溫與移動部件的風險。材料認識則靠「動手摸」勝過「用嘴講」。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-04.html"><span class="pg-dir">← 上一週</span><span class="pg-t">Tinkercad &amp; Bambu Studio</span></a>
+  <a class="next" href="week-06.html"><span class="pg-dir">下一週 →</span><span class="pg-t">鋼琴聲音 → 認識 Arduino</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

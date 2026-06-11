@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 10–11 週 · 電子鋼琴測試與迭代 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-10.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段四 · 測試與後處理</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 10–11 週</span>&nbsp;·&nbsp;試印與測試</div>
+    <h1>電子鋼琴<br>測試與迭代修正</h1>
+    <p class="week-lead">本兩週進入電子鋼琴外盒的「試印與測試」階段。承接第八、九週把外盒零件 3D 列印出來之後，這裡要逐件檢驗列印品質、實際假組試拼，並把電路板、喇叭、琴鍵按鈕放入測試是否干涉，找出問題後回頭修檔重印，確保進入正式組裝前每個零件都合格、能順利裝配。</p>
+    <div class="week-meta">
+      <span class="chip">兩週 · 3 節主軸</span>
+      <span class="chip accent">核心 <b>測試 → 修正 → 再測試</b></span>
+      <span class="chip">工具：游標卡尺</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>檢驗</b></div>
+      <div><h2>列印件品質檢驗與篩選</h2><div class="lh-sub">列印完成不等於可用</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會以系統性的方式檢查 3D 列印外盒零件的品質，判斷哪些可用、哪些需重印，建立「列印完成不等於可用」的品質意識。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>逐件目視檢查表面：有無翹邊、缺層、拉絲、層紋過深等列印瑕疵。</li>
+        <li>以游標卡尺量測關鍵尺寸，比對設計圖是否在誤差範圍內。</li>
+        <li>檢查各開孔位置與大小——喇叭孔、按鈕孔、走線孔是否對齊、是否需擴孔。</li>
+        <li>將零件分為「合格」「需修整」「需重印」三類並貼標記錄。</li>
+      </ol>
+    </div>
+    <p class="prose"><strong>操作解說：</strong>剛印出的零件常有翹邊、毛邊或尺寸偏差。先用眼睛看、用卡尺量，重點檢查<span class="kw">喇叭孔與 8 個按鈕孔</span>的位置與大小是否正確——這些孔位若偏差，後面電路與琴鍵就裝不進去。把零件分成三類，合格的收好、需修的進第三節處理、需重印的記下問題回去修檔。</p>
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">3</div><div><h3>三色標籤分類法</h3></div></div>
+      <ul class="keylist">
+        <li><strong>🟢 合格：</strong>尺寸、孔位、表面都 OK，直接收好待組裝。</li>
+        <li><strong>🟡 需修整：</strong>小瑕疵（毛邊、孔略緊），第三節打磨擴孔即可。</li>
+        <li><strong>🔴 需重印：</strong>尺寸或孔位偏差大，記下問題回去修檔重印。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>假組</b></div>
+      <div><h2>外盒假組與機構干涉測試</h2><div class="lh-sub">先試裝、不上膠</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>透過實際假組（不上膠的試拼）驗證外盒各面是否能順利接合，並把電路板、喇叭與琴鍵按鈕放入測試空間是否足夠、有無干涉。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>依組裝順序將外盒各面卡榫試拼，確認接合緊密、不鬆脫也不過緊。</li>
+        <li>將電路板與喇叭放入盒內預定位置，確認固定孔對齊、空間足夠。</li>
+        <li>把琴鍵按鈕由面板孔位裝入，逐顆測試能否順利按壓、不卡邊。</li>
+        <li>記錄所有干涉、卡住或對不上的位置，作為修正依據。</li>
+      </ol>
+    </div>
+    <p class="prose"><strong>操作解說：</strong>假組就是「先試裝、不上膠」，目的是在正式組裝前抓出問題。把外盒各面卡榫拼起來，再把電路板、喇叭、按鍵一一放進去，特別注意<span class="kw">琴鍵按下去會不會卡到孔邊、電路板會不會頂到盒壁</span>。哪裡裝不進、哪裡卡住，全部記下來，下一節集中處理。</p>
+    <div class="shot">
+      <svg class="shot-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2M9 13h.01M15 13h.01"/></svg>
+      <div class="shot-t">版位預留：外盒假組與電路置入測試照</div>
+      <div class="shot-d">放電路板、喇叭、按鈕裝入外盒的實拍，標出干涉檢查重點</div>
+      <div class="shot-tag">IMG · dry-fit-test</div>
+    </div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>迭代</b></div>
+      <div><h2>問題記錄與迭代修正</h2><div class="lh-sub">一次印不好很正常，重點是會修</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>將前兩節找出的問題系統化整理成修正清單，學會回到設計檔案修改參數並重新列印，體會 3D 列印「設計—列印—測試—修正」的迭代循環。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>彙整檢驗與假組階段的所有問題，列成「待修清單」。</li>
+        <li>區分問題類型——屬於<strong>列印參數</strong>（如翹邊、尺寸縮收）或屬於<strong>設計尺寸</strong>（如孔位偏移、間距太擠）。</li>
+        <li>回到 Tinkercad 或切片軟體修改對應參數，重新輸出列印檔。</li>
+        <li>重印問題零件後再次假組驗證，直到全部零件通過。</li>
+      </ol>
+    </div>
+    <p class="prose"><strong>操作解說：</strong>這一節是 3D 列印最重要的觀念——「<span class="kw">一次印不好很正常，重點是會修</span>」。把問題分清楚是「印壞的」還是「設計錯的」：印壞的調列印參數重印就好；設計錯的要回到 Tinkercad 改尺寸或孔位再重印。改完再試組一次，反覆到所有零件都裝得上、按得動，這個「測試 → 修正 → 再測試」的循環就是創客的核心能力。</p>
+    <div class="tip"><div class="block-label">💡 拍照記錄進步</div><p>鼓勵學生把每次修正前後的零件並排拍照記錄，看見自己「一次比一次好」的進步，也建立面對失敗、持續改善的態度。</p></div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 10-1｜測試與迭代記錄表</h3><div class="ws-kind">Test &amp; Iterate Log</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">填寫你的零件檢驗結果：合格＿＿件、需修整＿＿件、需重印＿＿件。</span></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">假組時發現的「干涉 / 卡住」問題（至少寫兩個）：</span>
+        <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">把上面的問題分類：哪些是「列印參數」問題？哪些是「設計尺寸」問題？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">這次迭代你具體改了什麼？重印後問題解決了嗎？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+    </div>
+  </div>
+
+  <table class="rubric" style="margin-top:26px">
+    <thead><tr><th style="width:28%">評量向度</th><th class="lv">優秀 4</th><th class="lv">良好 3</th><th class="lv">尚可 2</th><th class="lv">待加強 1</th></tr></thead>
+    <tbody>
+      <tr><td class="crit">品質檢驗</td><td>系統性逐件量測並正確分類</td><td>多數零件有檢驗分類</td><td>僅目視未量測</td><td>未進行檢驗</td></tr>
+      <tr><td class="crit">問題診斷</td><td>能正確區分參數／設計問題</td><td>大致能區分</td><td>分類有誤</td><td>無法判斷</td></tr>
+      <tr><td class="crit">迭代修正</td><td>修正後零件全數通過</td><td>多數通過</td><td>部分改善</td><td>未完成修正</td></tr>
+      <tr><td class="crit">記錄與反思</td><td>完整記錄並有反思</td><td>有記錄</td><td>記錄零散</td><td>無記錄</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>這兩週的精神是「測試文化」。讓「會修」比「一次到位」更被肯定，學生才敢放手嘗試。游標卡尺一定要人手一把、實際量，把抽象的「公差」變成手上的數字。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-09.html"><span class="pg-dir">← 上一週</span><span class="pg-t">緩衝週 + Maker Lab</span></a>
+  <a class="next" href="week-12.html"><span class="pg-dir">下一週 →</span><span class="pg-t">後處理打磨與組裝</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

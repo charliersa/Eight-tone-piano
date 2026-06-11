@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八音鋼琴創客課程 · 完整教材手冊</title>
+<link rel="stylesheet" href="assets/textbook.css">
+<style>
+  /* ---- cover ---- */
+  .cover{max-width:920px;margin:0 auto;padding:0 30px}
+  .cover-top{display:flex;align-items:center;gap:10px;padding:40px 0 0;font-family:var(--sans);font-size:12.5px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  .cover-top .ct-bar{width:30px;height:2px;background:var(--accent)}
+  .cover-hero{padding:46px 0 40px;border-bottom:2.5px solid var(--ink)}
+  .cover-hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(38px,7vw,68px);line-height:1.08;margin:0 0 8px;letter-spacing:.01em}
+  .cover-hero h1 .hl{color:var(--accent)}
+  .cover-sub{font-family:var(--serif);font-size:clamp(17px,2.6vw,23px);color:var(--ink-soft);margin:18px 0 0;font-weight:500}
+  .cover-en{font-family:var(--sans);font-size:13px;letter-spacing:.22em;color:var(--ink-faint);margin-top:14px;text-transform:uppercase}
+  .cover-figure{margin:30px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .cf{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;background:var(--card);box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .cf .cf-no{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+  .cf svg{width:54%;height:54%}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 0}
+
+  .intro{max-width:760px;margin:60px auto 0;padding:0 30px}
+  .sec-title{display:flex;align-items:center;gap:14px;margin:0 0 22px}
+  .sec-title .st-no{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  .sec-title h2{font-family:var(--serif);font-size:27px;font-weight:900;margin:0}
+  .sec-title .st-line{flex:1;height:1px;background:var(--line)}
+
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  @media(max-width:620px){.how-grid{grid-template-columns:1fr}}
+  .how{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;box-shadow:var(--shadow)}
+  .how h4{margin:0 0 6px;font-family:var(--serif);font-size:16px;display:flex;align-items:center;gap:9px}
+  .how .how-ico{width:30px;height:30px;border-radius:8px;background:var(--accent-wash);color:var(--accent-deep);display:grid;place-items:center;flex-shrink:0;font-weight:700}
+  .how p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+
+  /* roadmap */
+  .road{max-width:920px;margin:64px auto 0;padding:0 30px}
+  .phase-block{margin:30px 0}
+  .phase-tag{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .phase-tag .pt-badge{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;color:#fff;background:var(--accent);padding:4px 12px;border-radius:100px;white-space:nowrap}
+  .phase-tag .pt-name{font-family:var(--serif);font-size:18px;font-weight:700}
+  .phase-tag .pt-line{flex:1;height:1px;background:var(--line)}
+  .week-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .wcard{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:.16s;box-shadow:var(--shadow)}
+  .wcard:hover{border-color:var(--accent-line);transform:translateY(-2px)}
+  .wcard .wc-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+  .wcard .wc-no{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent)}
+  .wcard .wc-secs{font-family:var(--sans);font-size:11px;color:var(--ink-faint)}
+  .wcard h4{margin:0 0 6px;font-family:var(--serif);font-size:16.5px;line-height:1.35}
+  .wcard p{margin:0;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+
+  .goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:24px 0}
+  .goal{text-align:center;padding:20px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+  .goal .g-ico{width:46px;height:46px;margin:0 auto 12px;border-radius:12px;background:var(--accent-wash);display:grid;place-items:center}
+  .goal h4{margin:0 0 5px;font-family:var(--serif);font-size:15px}
+  .goal p{margin:0;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+
+  .cover-footer{max-width:760px;margin:70px auto 0;padding:30px;border-top:2px solid var(--ink);text-align:center;color:var(--ink-faint);font-size:12.5px}
+</style>
+</head>
+<body data-depth="0" data-page="index.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印手冊</button>
+  </div>
+</div>
+
+<!-- ===================== COVER ===================== -->
+<header class="cover">
+  <div class="cover-top"><span class="ct-bar"></span>創客 · 自造教育 · 完整教材手冊</div>
+  <div class="cover-hero">
+    <h1>八音鋼琴<br><span class="hl">創客課程</span></h1>
+    <p class="cover-sub">從觀察一台木製電子鋼琴，到設計、製造、程式與發表——<br>一套 18 週、跨越美感與工程的完整自造旅程。</p>
+    <p class="cover-en">Octave Piano · Maker Curriculum · Teacher &amp; Student Handbook</p>
+
+    <div class="cover-figure">
+      <div class="cf"><span class="cf-no">01</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="#c2410c" stroke-width="2.2"><rect x="8" y="14" width="32" height="22" rx="2"/><path d="M8 28h32M16 14v14M24 14v14M32 14v14"/></svg></div>
+      <div class="cf"><span class="cf-no">02</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3f6184" stroke-width="2.2"><path d="M10 38V10l14 8 14-8v28"/><circle cx="24" cy="24" r="3"/></svg></div>
+      <div class="cf"><span class="cf-no">03</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3f7d4e" stroke-width="2.2"><path d="M24 6l16 9v18l-16 9-16-9V15z"/><path d="M24 24l16-9M24 24v18M24 24L8 15"/></svg></div>
+      <div class="cf"><span class="cf-no">04</span>
+        <svg viewBox="0 0 48 48" fill="none" stroke="#b07d18" stroke-width="2.2"><rect x="10" y="10" width="28" height="28" rx="3"/><path d="M18 24h12M24 18v12"/><circle cx="24" cy="24" r="2"/></svg></div>
+    </div>
+
+    <div class="cover-meta">
+      <span class="chip accent"><b>18</b> 週課程</span>
+      <span class="chip"><b>50+</b> 節教學</span>
+      <span class="chip">適用 <b>高中職</b></span>
+      <span class="chip">老師 × 學生 <b>合一</b></span>
+      <span class="chip">含 <b>學習單・評量・程式碼</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== INTRO ===================== -->
+<section class="intro">
+  <div class="sec-title"><span class="st-no">緣起</span><h2>這套課程在教什麼？</h2><span class="st-line"></span></div>
+  <p class="lead-p">本課程以一台<strong>現成的「木製電子鋼琴科學玩具」</strong>為起點，帶領學生從「觀察—拆解—重組」開始，感受機構設計中「功能與形式共存」的美學語彙；接著一路走過向量繪圖、3D 建模、雷射切割、3D 列印、Arduino 電路與程式，最後設計出一台<strong>專屬於自己、能彈奏的放大版電子鋼琴</strong>，並公開發表。</p>
+  <p>整個歷程不只是「跟著做」，而是讓每位學生反覆經歷 <strong>「設計 → 製作 → 檢驗 → 修正」</strong> 的迭代循環，從一個「使用者」逐步成為能定義問題、創造作品的「設計者」。</p>
+
+  <div class="goal-grid">
+    <div class="goal"><div class="g-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg></div><h4>觀察與美感</h4><p>從拆解觀察機構之美，培養設計眼光</p></div>
+    <div class="goal"><div class="g-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><path d="M4 20V6l8 4 8-4v14"/></svg></div><h4>數位製造</h4><p>向量繪圖、3D 建模、雷切與列印工作流</p></div>
+    <div class="goal"><div class="g-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><rect x="4" y="7" width="16" height="11" rx="2"/><path d="M8 7V5M16 7V5M9 13h.01M15 13h.01"/></svg></div><h4>電路與程式</h4><p>Arduino 感測輸入到致動輸出的互動架構</p></div>
+    <div class="goal"><div class="g-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9-2.3.9-5.5-4-3.9 5.5-.8z"/></svg></div><h4>整合與發表</h4><p>把作品、文書與口頭表達整合成完整成果</p></div>
+  </div>
+</section>
+
+<!-- ===================== HOW TO USE ===================== -->
+<section class="intro">
+  <div class="sec-title"><span class="st-no">使用</span><h2>如何使用這本手冊</h2><span class="st-line"></span></div>
+  <p class="muted">本手冊「老師教學」與「學生操作」合一。每一節都依固定結構編排，方便對照與翻查：</p>
+  <div class="how-grid">
+    <div class="how"><h4><span class="how-ico">目</span>教學目標</h4><p>每節開頭以橘色框標示，是這一節要達成的具體學習成果，可直接寫進教案。</p></div>
+    <div class="how"><h4><span class="how-ico">流</span>操作流程</h4><p>藍色編號清單，是這一節由淺入深的步驟骨架，方便老師掌握節奏。</p></div>
+    <div class="how"><h4><span class="how-ico">解</span>操作解說</h4><p>大編號「步驟」區塊，是給學生看的逐步操作詳解，含關鍵字與快捷鍵。</p></div>
+    <div class="how"><h4><span class="how-ico">點</span>教學重點 / 提問</h4><p>橘色重點條與虛線提問框，幫助老師收斂概念、引導學生思考。</p></div>
+    <div class="how"><h4><span class="how-ico">碼</span>程式碼區塊</h4><p>深色 Arduino 程式區塊，右上角可一鍵複製，學生可直接貼到 IDE。</p></div>
+    <div class="how"><h4><span class="how-ico">單</span>學習單 / 評量</h4><p>每節附對應的學習單與評量表，可隨手冊一併列印發給學生填寫。</p></div>
+  </div>
+  <div class="tip"><div class="block-label">💡 列印小提醒</div><p>本手冊已針對 A4 直式排版最佳化。按右上角「列印手冊」即可印出當前頁；若要一次印出整冊，請開啟 <a href="handbook-all.html" style="color:var(--accent-deep);font-weight:600">全冊列印版</a>（3 份附錄 + 18 週串成一冊、自動分頁）。深色程式碼與卡片在列印時會保留底色。</p></div>
+</section>
+
+<!-- ===================== ROADMAP ===================== -->
+<section class="road">
+  <div class="sec-title"><span class="st-no">地圖</span><h2>18 週課程地圖</h2><span class="st-line"></span></div>
+  <p class="muted" style="max-width:760px">課程分為六大階段，循序累積。點選任一週可直接前往該週教材；左上角「課程目錄」可隨時開啟完整索引。</p>
+
+  <div id="roadmap"></div>
+</section>
+
+<footer class="cover-footer">
+  八音鋼琴創客課程 · 完整教材手冊　|　美感 × 工程 × 自造教育　|　共 18 週・六大階段<br>
+  <span style="opacity:.7">建議列印為 A4 成冊，搭配實作課程使用</span>
+</footer>
+
+<script src="assets/textbook.js"></script>
+<script>
+  // build roadmap from TOC-like data
+  var PHASES=[
+    {badge:'階段一',name:'觀察與逆向',weeks:[
+      {no:'第 1 週',secs:'3 節',t:'觀察、拆解、重組',d:'機構美感的觀察基礎；拆解一台木製電子鋼琴。',href:'weeks/week-01.html'},
+      {no:'第 2 週',secs:'3 節',t:'逆向製作與向量繪圖',d:'Illustrator 入門、照片描圖、鋼筆工具與製作說明圖。',href:'weeks/week-02.html'}
+    ]},
+    {badge:'階段二',name:'機構與 3D 建模',weeks:[
+      {no:'第 3 週',secs:'3 節',t:'機構基礎：孔位與間距',d:'孔對孔定位、琴鍵陣列、doodle3D 概念。',href:'weeks/week-03.html'},
+      {no:'第 4 週',secs:'3 節',t:'Tinkercad & Bambu Studio',d:'SVG 匯入、布林運算、切片基本設定。',href:'weeks/week-04.html'},
+      {no:'第 5 週',secs:'3 節',t:'列印機器與材料認識',d:'機器操作、PLA/PETG/TPU 選材、彩色畫板。',href:'weeks/week-05.html'}
+    ]},
+    {badge:'階段三',name:'電路與外殼',weeks:[
+      {no:'第 6 週',secs:'3 節',t:'鋼琴聲音 → Arduino',d:'電路基礎、按鈕與蜂鳴器、8 鍵迷你鋼琴。',href:'weeks/week-06.html'},
+      {no:'第 7 週',secs:'6 節',t:'外盒設計與雷射切割',d:'手繪→平面圖→Tinkercad；Beam Studio 雷切。',href:'weeks/week-07.html'},
+      {no:'第 8 週',secs:'3 節',t:'3D 列印印製外盒',d:'切片設定、送印列印、監看與後處理。',href:'weeks/week-08.html'},
+      {no:'第 9 週',secs:'3 節',t:'緩衝週 + Maker Lab',d:'檔案除錯補做；Bambu 創客實驗室延伸。',href:'weeks/week-09.html'}
+    ]},
+    {badge:'階段四',name:'測試與後處理',weeks:[
+      {no:'第 10–11 週',secs:'3 節',t:'電子鋼琴測試與迭代',d:'品質檢驗、假組干涉測試、問題迭代修正。',href:'weeks/week-10.html'},
+      {no:'第 12 週',secs:'3 節',t:'後處理打磨與組裝',d:'支撐移除、粗磨細磨、與雷切電路整合。',href:'weeks/week-12.html'},
+      {no:'第 13 週',secs:'3 節',t:'外盒上色',d:'打底、主體上色、細節彩繪與保護層。',href:'weeks/week-13.html'}
+    ]},
+    {badge:'階段五',name:'多色列印與 AI',weeks:[
+      {no:'第 14 週',secs:'3 節',t:'三色畫板 + AI 生圖',d:'用 AI 生成圖案、Bambu 多色畫板設定列印。',href:'weeks/week-14.html'},
+      {no:'第 15 週',secs:'3 節',t:'畫板配色與完成',d:'色彩三要素、配色方法、完成展示。',href:'weeks/week-15.html'}
+    ]},
+    {badge:'階段六',name:'整合與發表',weeks:[
+      {no:'第 16–17 週',secs:'3 節',t:'文書整合與作品整理',d:'學習檔案、書面報告與簡報、展示準備。',href:'weeks/week-16.html'},
+      {no:'第 18 週',secs:'3 節',t:'公開發表演說',d:'講稿撰寫、上台演練、公開發表與回饋。',href:'weeks/week-18.html'}
+    ]}
+  ];
+  var rm=document.getElementById('roadmap');
+  PHASES.forEach(function(p){
+    var b=document.createElement('div');b.className='phase-block';
+    var cards=p.weeks.map(function(w){
+      return '<a class="wcard" href="'+w.href+'"><div class="wc-top"><span class="wc-no">'+w.no+'</span><span class="wc-secs">'+w.secs+'</span></div><h4>'+w.t+'</h4><p>'+w.d+'</p></a>';
+    }).join('');
+    b.innerHTML='<div class="phase-tag"><span class="pt-badge">'+p.badge+'</span><span class="pt-name">'+p.name+'</span><span class="pt-line"></span></div><div class="week-cards">'+cards+'</div>';
+    rm.appendChild(b);
+  });
+</script>
+</body>
+</html>

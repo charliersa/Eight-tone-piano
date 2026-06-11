@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 8 週 · 3D 列印印製外盒 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-08.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段三 · 電路與外殼</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 8 週</span>&nbsp;·&nbsp;列印實作</div>
+    <h1>3D 列印印製<br>電子鋼琴外盒</h1>
+    <p class="week-lead">本週進入放大版電子鋼琴的 3D 列印實作，把第七週建好的外盒模型真正印製成形。學生將學會把 STL 模型匯入 Bambu Studio 完成切片與列印參數設定，再實際送入 3D 列印機印製，並在列印中監看首層與品質、列印後完成取件、支撐移除與表面打磨。透過完整走過「切片設定 → 送印列印 → 監看後處理」的流程，體會數位模型轉為實體零件的最後一哩。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">流程 <b>切片 → 列印 → 後處理</b></span>
+      <span class="chip">軟體：Bambu Studio</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>切片</b></div>
+      <div><h2>檔案輸出與切片設定</h2><div class="lh-sub">擺放方位決定支撐、支撐決定品質與耗時</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會把第七週建好的 3D 模型（STL）匯入 Bambu Studio，完成擺放方位、層高、填充、支撐等列印前參數設定，切片產生可送印的檔案。</p>
+    </div>
+    <p class="prose"><strong>什麼是切片：</strong>3D 模型是一個立體形狀，但列印機是一層層堆疊的；切片軟體把模型「切」成數百層的列印路徑，並決定怎麼印——這份設定直接影響成品的強度、外觀與耗時。</p>
+    <div class="steps">
+      <div class="step"><h4>匯入與擺放</h4><p>啟動 Bambu Studio，先確認印表機機型與線材設定正確，再拖入第七週匯出的 STL（盒身、上蓋）；模型出現在虛擬列印平台上。</p></div>
+      <div class="step"><h4>擺放方位</h4><p>以「<span class="kw">平整面朝下、避開大量懸空</span>」為原則——外盒盒身開口朝上、上蓋平面朝下，可大幅減少支撐用量與失敗率；可按 <span class="kbd">F</span> 用自動方位（Auto Orient）參考。</p></div>
+      <div class="step"><h4>列印參數</h4><p>外盒為外觀件：層高 0.16～0.2mm、填充 10～15%、外殼 2～3 層即可；鏤空圖案或懸空開孔處才啟用支撐（懸空角度 45 度以上），避免整件包滿支撐難以清除。</p></div>
+      <div class="step"><h4>切片與輸出</h4><p>點「切片（Slice）」後切到「預覽」分頁，檢查預估時間、線材用量與支撐位置；拖動層數滑桿逐層檢視確認無誤，再儲存／傳送列印檔。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>同一個外盒，「開口朝上」與「開口朝下」哪種擺法支撐較少？引導學生理解擺放方位與支撐量是同一問題的兩面，呼應第四、五週的列印觀念。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>擺放方位決定支撐、支撐決定品質與耗時</strong>」——切片不是按一下 Slice 那麼簡單，而是設計與製造之間的關鍵決策。</p></div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>送印</b></div>
+      <div><h2>送印列印與首層確認</h2><div class="lh-sub">列印前檢查與首層是成功的一半</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>將第一節切片好的檔案實際送入 3D 列印機印製，學會機器的最後檢查、送圖、開始列印與首層確認，把數位模型真正變成實體外盒零件。</p>
+    </div>
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">排</div><div><h3>補印與品質確認的排程策略</h3></div></div>
+      <p class="prose" style="margin:0">因列印需要時間，建議以<strong>分批、輪流</strong>的方式排程，讓機器不間斷運作；學生等待列印時可進行打磨、假組或延伸體驗，不浪費等待時間。本節目的是「收齊」——確保進入後續組裝週時每個學生的零件都齊備且合格。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>列印前檢查</h4><p>確認列印平台清潔無殘膠（可用酒精擦拭 PEI 板）、線材足夠（一個外盒件約需數十克）、噴頭歸位無殘料、機器周圍淨空。</p></div>
+      <div class="step"><h4>傳送切片檔</h4><p>三種方式擇一：雲端列印（WiFi 直送，最方便）、SD 卡／USB（複製 .3mf / .gcode.3mf）、LAN 區網（學校環境建議）。</p></div>
+      <div class="step"><h4>啟動與加熱</h4><p>於機器螢幕確認檔案無誤後點「開始」，機器會先加熱噴頭與熱床（約 3～5 分鐘）再開始列印；加熱期間勿觸碰高溫部件。</p></div>
+      <div class="step"><h4>確認首層</h4><p>開始列印的<span class="kw">前 5 分鐘最關鍵</span>，觀察首層線材是否平整貼附；首層良好是成功列印的一半，後續監看與取件交由第三節處理。</p></div>
+    </div>
+    <div class="safety">
+      <div class="card-head"><div class="card-glyph">⚠</div><div><h3>列印安全提醒</h3></div></div>
+      <ul>
+        <li>噴頭 200°C 以上、熱床 60°C 以上，列印中與剛結束 10 分鐘內嚴禁觸碰。</li>
+        <li>移動部件高速運作，手部、頭髮、衣物切勿靠近。</li>
+      </ul>
+    </div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>列印前檢查</strong>」與「<strong>首層確認</strong>」兩個關卡——多數列印失敗都源於平台不潔、線材不足或首層沒黏好；養成開印前逐項檢查的習慣。</p></div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>後處理</b></div>
+      <div><h2>監看、取件與後處理</h2><div class="lh-sub">列印不是按下開始就結束</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會在列印過程中監看首層附著與品質，正確取下成品並完成後處理（支撐移除、毛邊修整、表面打磨），把列印出的外盒零件整理到可組裝的狀態。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>監看首層與過程</h4><p>前 5 分鐘的首層最關鍵，觀察線材是否平整貼附熱床；若有翹邊、脫落、未黏附立即停止重新校正。之後定時查看，避免中途位移或斷料。</p></div>
+      <div class="step"><h4>降溫取件</h4><p>螢幕顯示完成後，先等熱床降至 <span class="kw">40°C 以下</span>再取下 PEI 磁吸板，輕輕扳折即可取下成品；趁熱硬取易使底面變形或刮傷平台。</p></div>
+      <div class="step"><h4>移除支撐與毛邊</h4><p>用尖嘴鉗或斜口鉗小心剝除支撐，從邊緣慢慢撬起避免拉傷表面；殘留的支撐痕與毛邊用斜口鉗或筆刀清修。操作時注意手部安全。</p></div>
+      <div class="step"><h4>打磨與假組</h4><p>以砂紙（先粗後細）打磨支撐接觸面與層紋；打磨後把各列印件與雷切件、電路做一次假組，確認孔位、卡榫吻合，記錄需修改處。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>列印件表面有明顯層紋，要靠「降層高重印」還是「打磨後上漆」解決？引導學生依時間與品質需求做取捨——展示面重印或細磨上漆，內部件則可接受層紋。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>列印不是按下開始就結束</strong>」——監看、取件、後處理每一步都影響成品品質；並透過假組銜接雷切件與電路，邁向最終組裝。</p></div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 8-1｜列印流程檢核</h3><div class="ws-kind">Print Process Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">你的盒身用什麼擺放方位？這樣擺支撐多還是少？為什麼？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">列印前檢查清單（完成請打勾）</span>
+        <div class="ws-check">
+          <label><span class="ws-box"></span>平台清潔無殘膠</label>
+          <label><span class="ws-box"></span>線材足夠</label>
+          <label><span class="ws-box"></span>噴頭歸位無殘料</label>
+          <label><span class="ws-box"></span>周圍淨空</label>
+        </div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">你的列印件首層附著如何？有沒有遇到翹邊？怎麼處理的？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">後處理後與雷切件假組，發現哪些需要修改的地方？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>列印耗時，課堂節奏要靠「排程」撐起來。建議建立「列印中 → 等待學生做後處理 / 假組」的並行流程，讓機器與人都不閒置。把「首層 5 分鐘」訂為全班一起盯著看的儀式，培養監看習慣。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-07.html"><span class="pg-dir">← 上一週</span><span class="pg-t">外盒設計與雷射切割</span></a>
+  <a class="next" href="week-09.html"><span class="pg-dir">下一週 →</span><span class="pg-t">緩衝週 + Maker Lab</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

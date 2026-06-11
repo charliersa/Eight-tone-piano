@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 3 週 · 機構基礎：孔位與間距 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-03.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段二 · 機構與 3D 建模</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 3 週</span>&nbsp;·&nbsp;機構幾何</div>
+    <h1>機構基礎製作<br>孔位、間距、幾何基礎</h1>
+    <p class="week-lead">本週進入機構製作的核心基礎，從孔位定位、按鍵孔位陣列到零件間距，逐步建立精密機構設計的觀念。學生將透過 Illustrator 的精準繪圖與雷切實驗，理解「公差」與「咬合」在機構設計中的重要性，並學會用 doodle3D 軟體將 2D 圖檔延伸為 3D 模型，銜接後續的 3D 列印實作。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">關鍵概念 <b>公差 · 陣列 · 對位</b></span>
+      <span class="chip">軟體：Illustrator / doodle3D</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>定位</b></div>
+      <div><h2>孔對孔的間距與定位</h2><div class="lh-sub">理解間距如何影響對位與組裝精度</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>讓學生理解孔位之間的間距如何影響機構的對位與組裝精度，掌握 Illustrator 中「對齊」「均分間距」「智慧型參考線」等定位工具。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>講解標準孔徑與間距規格。</li>
+        <li>在 Illustrator 中以「變形面板」輸入精確座標繪製孔位。</li>
+        <li>輸出小型試片進行雷切。</li>
+        <li>以實物量測比對設計值與切割結果的誤差。</li>
+      </ol>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>強調「<strong>設計尺寸 ≠ 雷切尺寸</strong>」的觀念，引導學生記錄雷射光束的耗損值（<span class="kw">kerf</span>），作為日後設計補償的依據。</p>
+    </div>
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">K</div><div><h3>名詞小教室：什麼是 Kerf（切口寬度）？</h3><div class="ch-sub">雷射光束本身有寬度</div></div></div>
+      <p class="prose" style="margin:0">雷射切割時，光束會「燒掉」一條約 0.1–0.2mm 寬的材料，這條被燒掉的寬度就叫 kerf。它會讓切出來的孔比設計值略大、凸出的卡榫比設計值略小。理解 kerf，才能在設計時預留補償，做出剛好咬合的零件。</p>
+    </div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>陣列</b></div>
+      <div><h2>琴鍵按鈕孔位陣列與定位</h2><div class="lh-sub">8 顆琴鍵的等距排列與對位</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>延續第一節「孔對孔的間距與定位」，本節聚焦電子鋼琴最關鍵的機構——琴鍵按鈕的孔位陣列。引導學生理解 8 顆琴鍵如何在面板上等距排列、對齊下方電路按鈕，建立「陣列、間距、對位」的幾何基礎。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>量測單顆按鈕的外徑與所需開孔尺寸，確認面板開孔比按鈕略大、能順利穿過。</li>
+        <li>決定琴鍵間距（孔中心到孔中心的距離），讓相鄰按鍵不互相干涉、手指好按。</li>
+        <li>以等距陣列規劃 8 個孔位，必要時分成兩排或加大白鍵、黑鍵的相對位置。</li>
+        <li>標出每個孔位的中心座標，作為下一節電腦繪製面板的依據。</li>
+      </ol>
+    </div>
+
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">幾</div><div><h3>三個幾何重點</h3><div class="ch-sub">陣列 · 對位 · 間距與手感</div></div></div>
+      <ul class="keylist">
+        <li><strong>陣列（Array）：</strong>8 個孔不是隨意排，而是「等間距重複」的陣列。只要定好「<span class="kw">起點 + 間距 + 數量</span>」，整排孔位就能精準產生——這正是後續在 Illustrator 用「再次變形（<span class="kbd">Ctrl+D</span>）」快速複製孔位的概念。</li>
+        <li><strong>對位（Registration）：</strong>面板上的按鈕孔必須對齊下方電路板上的實體按鈕。孔位一旦偏移，按鍵就會卡住或按不到，因此「孔對孔」的對位精度是這台鋼琴能不能彈的關鍵。</li>
+        <li><strong>間距與手感：</strong>琴鍵太擠會誤觸、太鬆會浪費面板空間。引導學生實際把手指放上去比畫，找出好按又緊湊的間距，體會「功能與尺寸」如何互相牽制。</li>
+      </ul>
+    </div>
+
+    <div class="prose">
+      <h3>操作解說</h3>
+      <p>這一節把第一節的「孔對孔定位」放大到整排琴鍵。先量一顆按鈕、定好開孔大小與間距，再用等距陣列排出 8 個孔位並記下座標。重點是讓學生明白：<strong>面板上每個孔都要對準下方電路的按鈕，這個對位關係決定了琴鍵按下去能不能正常發聲。</strong></p>
+    </div>
+    <div class="shot">
+      <svg class="shot-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5" cy="12" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="20" cy="12" r="2"/></svg>
+      <div class="shot-t">版位預留：8 鍵等距孔位陣列標註圖</div>
+      <div class="shot-d">放面板開孔陣列圖，標出孔中心座標與間距尺寸</div>
+      <div class="shot-tag">IMG · key-array</div>
+    </div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>立體</b></div>
+      <div><h2>doodle3D 與 Bambu Studio 概念組合</h2><div class="lh-sub">從 2D 平面到 3D 立體的第一步</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學習使用 doodle3D 將 2D 平面草圖轉換為 3D 立體模型，並認識 Bambu Studio 的切片邏輯，完成從平面到立體的設計轉換。</p>
+    </div>
+    <div class="flow">
+      <div class="block-label">📋 操作流程</div>
+      <ol>
+        <li>以 doodle3D 拉伸平面圖形產生厚度。</li>
+        <li>將 2D 零件圖延伸為 3D 爆炸圖。</li>
+        <li>匯出 STL 檔。</li>
+        <li>在 Bambu Studio 中載入並設定基本列印參數。</li>
+      </ol>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>讓學生親自體驗「<strong>2D 思維</strong>」與「<strong>3D 思維</strong>」的差異，理解平面圖在轉為立體時厚度、方向、支撐等新增的設計變因。</p>
+    </div>
+
+    <div class="worksheet">
+      <div class="ws-head">
+        <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 3-1｜公差與陣列實測</h3><div class="ws-kind">Tolerance &amp; Array Worksheet</div></div></div>
+        <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+      </div>
+      <div class="ws-body">
+        <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">量測你的按鈕外徑＿＿＿ mm，面板開孔你設定為＿＿＿ mm，預留的餘裕是＿＿＿ mm。</span></div>
+        <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">你決定的琴鍵間距（孔中心到孔中心）是＿＿＿ mm。為什麼選這個間距？</span>
+          <div class="ws-lines"><div class="ws-line"></div></div></div>
+        <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">雷切後實測孔徑與設計值差了多少？這個差值（kerf）大約是＿＿＿ mm。</span></div>
+        <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">用一句話解釋「設計尺寸 ≠ 雷切尺寸」的原因。</span>
+          <div class="ws-lines"><div class="ws-line"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule heavy">
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>本週是「精密」觀念的起點。讓學生親手量、親手切、再親手量誤差，比講十遍公差都有用。把第一片試切片留下來貼在學習單旁，當作整學期「設計≠製造」的物證。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-02.html"><span class="pg-dir">← 上一週</span><span class="pg-t">逆向製作與向量繪圖</span></a>
+  <a class="next" href="week-04.html"><span class="pg-dir">下一週 →</span><span class="pg-t">Tinkercad &amp; Bambu Studio</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

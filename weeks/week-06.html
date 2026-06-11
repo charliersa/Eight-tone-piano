@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 週 · 鋼琴聲音 → 認識 Arduino | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-06.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段三 · 電路與外殼</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 6 週</span>&nbsp;·&nbsp;電路與程式</div>
+    <h1>鋼琴基礎聲音<br>認識 Arduino</h1>
+    <p class="week-lead">本週將前幾週製作的木製機構作品與電子互動結合，認識 Arduino 微控制器的基本概念。學生透過製作「鋼琴聲音按鈕」入門專題，學習如何讓按鈕的按壓觸發聲音輸出，建立「感測器輸入 → 程式判斷 → 致動器輸出」的互動裝置基本架構，為後續創客作品的智慧化奠定基礎。</p>
+    <div class="week-meta">
+      <span class="chip">3 節課</span>
+      <span class="chip accent">核心架構 <b>輸入 → 判斷 → 輸出</b></span>
+      <span class="chip">硬體：Arduino UNO / 麵包板</span>
+    </div>
+  </header>
+
+  <!-- 第一節 -->
+  <section class="lesson" id="s1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第一節</small><b>電路</b></div>
+      <div><h2>認識 Arduino 與電路基礎</h2><div class="lh-sub">先認識這顆「大腦」與它的接線方式</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識 Arduino 開發板的核心組件（數位／類比腳位、電源、USB 接口），理解麵包板的內部接線邏輯與基本電路概念（電壓、電流、接地）。</p>
+    </div>
+    <p class="prose">Arduino 是一塊「可程式化的電路控制板」，可以把它想成電子作品的<strong>大腦</strong>。我們用電腦寫好程式上傳給它，它就能依指令讀取感測器（輸入）、控制燈光與聲音（輸出）。</p>
+
+    <div class="steps">
+      <div class="step">
+        <h4>Arduino UNO 板各部位功能</h4>
+        <p><strong>USB 接口：</strong>連電腦上傳程式與供電（5V）。<strong>電源接口（DC Jack）：</strong>接 7–12V 變壓器獨立運作。<strong>數位腳位（0–13）：</strong>只處理 HIGH（5V）／LOW（0V）兩種狀態，接按鈕、LED、蜂鳴器；標「~」的腳位（3、5、6、9、10、11）支援 PWM。<strong>類比輸入（A0–A5）：</strong>讀取連續數值 0–1023。<strong>電源腳位：</strong>5V、3.3V 與 GND（接地，務必與外部零件共地）。<strong>內建 LED（腳位 13）：</strong>測試板子是否正常最快的方法。</p>
+        <p class="muted keyline">教學提示：請學生親手指認 USB、電源、GND、腳位 13 四個關鍵位置，這是後續所有接線的基準。</p>
+      </div>
+      <div class="step">
+        <h4>麵包板的連通規則</h4>
+        <p><strong>兩側電源軌（紅藍長條）：</strong>沿長邊「整條縱向相通」，紅（+）接電源、藍（−）接 GND。<strong>中間插孔區：</strong>每一「直行」的 5 個孔彼此相通，但橫向不相通；中央凹槽左右隔開。</p>
+        <p class="keyline"><span class="kw">接線口訣：同一直行＝相通，跨過中央溝＝不通。</span>先把 5V 與 GND 各拉一條到電源軌，之後零件就近取電，線路最乾淨。</p>
+      </div>
+      <div class="step">
+        <h4>完成第一個 LED 點亮電路</h4>
+        <p><strong>LED 極性：</strong>長腳為正極（接電源）、短腳為負極（接 GND）。<strong>限流電阻：</strong>LED 直接接 5V 會燒毀，必須串聯 220Ω–330Ω 電阻。<strong>接線：</strong>腳位 13 → LED 長腳 → LED 短腳串接 220Ω 電阻 → 電阻另一端接 GND。</p>
+        <p class="muted keyline">教學提示：先不通電完成接線，由老師檢查極性與限流電阻無誤後再插 USB，建立「先檢查再通電」的習慣。</p>
+      </div>
+      <div class="step">
+        <h4>上傳 Blink 範例驗證環境</h4>
+        <p>開啟 Arduino IDE →「工具 → 開發板」選 Arduino UNO →「工具 → 連接埠」選對應 COM 埠 →「檔案 → 範例 → 01.Basics → Blink」→ 點左上角「→（上傳）」。成功後腳位 13 的 LED 會每秒閃爍一次。<strong>程式結構：</strong><code class="kbd">setup()</code> 只執行一次、<code class="kbd">loop()</code> 不斷重複。試把 <code class="kbd">delay(1000)</code> 改成 <code class="kbd">delay(200)</code> 觀察閃爍變快——這是學生第一次體會「改程式 → 看到實體改變」的成就感。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--safe)">!</div><div><h3>常見問題排除</h3></div></div>
+      <table class="tbl" style="box-shadow:none;margin:6px 0 0">
+        <tbody>
+          <tr><td class="em" style="width:32%">找不到連接埠</td><td>檢查 USB 線是否可「傳輸資料」、是否需安裝 CH340 驅動。</td></tr>
+          <tr><td class="em">上傳失敗</td><td>確認開發板型號與連接埠正確，拔除接在腳位 0、1 的線。</td></tr>
+          <tr><td class="em">LED 不亮</td><td>檢查極性、限流電阻是否鬆脫、是否插在相通的同一直行。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>建立「<strong>硬體接線</strong>」與「<strong>軟體程式</strong>」必須同步正確的觀念，並強調極性、限流電阻等基本電路安全常識。</p>
+    </div>
+  </section>
+
+  <!-- 第二節 -->
+  <section class="lesson" id="s2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第二節</small><b>發聲</b></div>
+      <div><h2>按鈕輸入與蜂鳴器發聲</h2><div class="lh-sub">Arduino 第一次「發出聲音」</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>學會以數位輸入讀取按鈕狀態，並透過 <code class="kbd">tone()</code> 函式驅動蜂鳴器發出不同頻率的音階，建立「輸入 → 判斷 → 輸出」的程式流程。</p>
+    </div>
+
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">件</div><div><h3>認識零件：按鈕與蜂鳴器</h3></div></div>
+      <ul class="keylist">
+        <li><strong>按鈕（Push Button）：</strong>四隻腳的輕觸開關，對角兩腳在按下時導通。按下＝接通、放開＝斷開。</li>
+        <li><strong>蜂鳴器（Buzzer）：</strong>分「有源」與「無源」。有源通電固定叫一個音、無法控制音高；要彈出 Do、Re、Mi，<span class="kw">必須用無源蜂鳴器</span>搭配 <code class="kbd">tone()</code> 控制頻率。本節請使用無源蜂鳴器。</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>接上按鈕並配置下拉電阻</h4>
+        <p><strong>什麼是下拉電阻：</strong>腳位沒接東西時電位會「浮動」，讀值忽高忽低。下拉電阻（10kΩ）把腳位平時固定拉到 GND（讀 LOW），按下時才接 5V（讀 HIGH）。<strong>接線：</strong>按鈕一腳接 5V，另一對角腳同時接「數位腳位 2」與「一顆 10kΩ 電阻到 GND」。</p>
+        <p class="muted keyline">簡化做法：可改用程式內建上拉電阻——按鈕一腳接 GND、另一腳接腳位 2，程式以 <code class="kbd">INPUT_PULLUP</code> 設定（邏輯相反）。初學建議先用實體下拉電阻較好理解。</p>
+      </div>
+      <div class="step">
+        <h4>以 digitalRead() 偵測按壓</h4>
+        <p>用 <code class="kbd">pinMode()</code> 把腳位 2 設為輸入，再用 <code class="kbd">digitalRead()</code> 讀狀態，搭配 <code class="kbd">if</code> 判斷。先做最單純的「按下亮內建 LED」驗證接線：</p>
+      </div>
+    </div>
+
+    <div class="code">
+      <div class="code-bar"><span class="code-dots"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></span><span class="code-fname">button_led.ino</span><button class="code-copy">複製</button></div>
+<pre><span class="k">const</span> <span class="t">int</span> btn = <span class="n">2</span>;
+
+<span class="t">void</span> <span class="f">setup</span>() {
+  <span class="f">pinMode</span>(btn, <span class="k">INPUT</span>);
+  <span class="f">pinMode</span>(<span class="n">13</span>, <span class="k">OUTPUT</span>);
+}
+
+<span class="t">void</span> <span class="f">loop</span>() {
+  <span class="k">if</span> (<span class="f">digitalRead</span>(btn) == <span class="k">HIGH</span>) {   <span class="c">// 按下</span>
+    <span class="f">digitalWrite</span>(<span class="n">13</span>, <span class="k">HIGH</span>);
+  } <span class="k">else</span> {
+    <span class="f">digitalWrite</span>(<span class="n">13</span>, <span class="k">LOW</span>);
+  }
+}</pre>
+    </div>
+
+    <div class="steps">
+      <div class="step" style="counter-reset:s 2">
+        <h4>連接蜂鳴器並查表設定音階頻率</h4>
+        <p><strong>接線：</strong>無源蜂鳴器正極（長腳）接「數位腳位 8」，負極（短腳）接 GND。<strong>音高就是頻率：</strong>聲音的高低由「振動頻率（Hz）」決定，頻率越高聲音越尖。<code class="kbd">tone(腳位, 頻率)</code> 發出指定頻率，<code class="kbd">noTone(腳位)</code> 停止。</p>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>音階（中央 Do 起）</th><th>Do</th><th>Re</th><th>Mi</th><th>Fa</th><th>Sol</th><th>La</th><th>Si</th><th>高 Do</th></tr></thead>
+      <tbody><tr><td class="em">頻率 (Hz)</td><td>262</td><td>294</td><td>330</td><td>349</td><td>392</td><td>440</td><td>494</td><td>523</td></tr></tbody>
+    </table>
+
+    <p class="prose">把上面 LED 換成蜂鳴器發聲，即完成「按一下響一聲（Do）」：</p>
+    <div class="code">
+      <div class="code-bar"><span class="code-dots"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></span><span class="code-fname">button_buzzer.ino</span><button class="code-copy">複製</button></div>
+<pre><span class="k">const</span> <span class="t">int</span> btn = <span class="n">2</span>;
+<span class="k">const</span> <span class="t">int</span> buzzer = <span class="n">8</span>;
+
+<span class="t">void</span> <span class="f">setup</span>() {
+  <span class="f">pinMode</span>(btn, <span class="k">INPUT</span>);
+}
+
+<span class="t">void</span> <span class="f">loop</span>() {
+  <span class="k">if</span> (<span class="f">digitalRead</span>(btn) == <span class="k">HIGH</span>) {
+    <span class="f">tone</span>(buzzer, <span class="n">262</span>);   <span class="c">// 發出 Do（262 Hz）</span>
+  } <span class="k">else</span> {
+    <span class="f">noTone</span>(buzzer);      <span class="c">// 放開即停</span>
+  }
+}</pre>
+    </div>
+
+    <div class="steps">
+      <div class="step" style="counter-reset:s 3">
+        <h4>完成「按一下響一聲」並加上去彈跳</h4>
+        <p>上傳後按下按鈕，蜂鳴器發出 Do、放開停止。<strong>去彈跳（debounce）：</strong>機械按鈕在按下瞬間有微小抖動，可能造成聲音斷續。最簡單的做法是在偵測到按下後加一行 <code class="kbd">delay(20)</code> 略過抖動區間，聲音就會乾淨穩定。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-glyph" style="background:var(--safe)">!</div><div><h3>常見問題排除</h3></div></div>
+      <table class="tbl" style="box-shadow:none;margin:6px 0 0">
+        <tbody>
+          <tr><td class="em" style="width:32%">完全不發聲</td><td>確認用的是「無源」蜂鳴器；檢查正負極與腳位是否接對。</td></tr>
+          <tr><td class="em">聲音一直響</td><td>多半是按鈕接線或下拉電阻沒接好造成腳位浮動，檢查下拉電阻是否接到 GND。</td></tr>
+          <tr><td class="em">按一下響好幾聲</td><td>按鈕彈跳所致，於判斷式後加 <code class="kbd">delay(20)</code> 去彈跳。</td></tr>
+          <tr><td class="em">音不準</td><td><code class="kbd">tone()</code> 為方波近似音，與樂器音色不同屬正常；頻率正確音高即正確。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>認識「<strong>音高 = 頻率</strong>」的物理關係，並引導學生理解程式邏輯中 <code class="kbd">if</code> 判斷式如何對應實體世界的「如果……就……」。</p>
+    </div>
+  </section>
+
+  <!-- 第三節 -->
+  <section class="lesson" id="s3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>第三節</small><b>整合</b></div>
+      <div><h2>鋼琴聲音按鈕機構整合</h2><div class="lh-sub">擴充成 8 鍵迷你鋼琴並裝進外殼</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>將多顆按鈕對應不同音階，整合為迷你鋼琴互動裝置，並結合前幾週製作的雷切外殼，完成具完整外觀的電子作品。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>擴充電路為 8 顆按鈕對應 Do 到高音 Do</h4>
+        <p><strong>接線規劃：</strong>8 顆按鈕分別接數位腳位 2～9，每顆比照第二節接一顆 10kΩ 下拉電阻到 GND；蜂鳴器移到腳位 10。所有按鈕與電阻共用麵包板兩側的 5V 與 GND 電源軌。</p>
+        <p><strong>對應關係：</strong>腳位 2→Do、3→Re、4→Mi、5→Fa、6→Sol、7→La、8→Si、9→高音 Do。</p>
+        <p class="muted keyline">教學提示：先一次只接 1～2 顆按鈕測通，確認無誤再逐顆擴充，比一次接 8 顆再除錯容易得多。</p>
+      </div>
+      <div class="step">
+        <h4>以陣列與 for 迴圈整理程式碼</h4>
+        <p><strong>為什麼用陣列：</strong>若每顆按鈕都寫一段 <code class="kbd">if</code>，程式會又長又難改。把「腳位」與「頻率」各放進一個陣列，再用 <code class="kbd">for</code> 迴圈一次檢查 8 顆按鈕，程式碼精簡且好擴充。</p>
+      </div>
+    </div>
+
+    <div class="code">
+      <div class="code-bar"><span class="code-dots"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></span><span class="code-fname">mini_piano_8keys.ino</span><button class="code-copy">複製</button></div>
+<pre><span class="c">// 8 顆按鈕腳位</span>
+<span class="k">const</span> <span class="t">int</span> btns[<span class="n">8</span>]  = {<span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>, <span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>};
+<span class="c">// Do ~ 高音 Do 頻率</span>
+<span class="k">const</span> <span class="t">int</span> notes[<span class="n">8</span>] = {<span class="n">262</span>, <span class="n">294</span>, <span class="n">330</span>, <span class="n">349</span>, <span class="n">392</span>, <span class="n">440</span>, <span class="n">494</span>, <span class="n">523</span>};
+<span class="k">const</span> <span class="t">int</span> buzzer = <span class="n">10</span>;
+
+<span class="t">void</span> <span class="f">setup</span>() {
+  <span class="k">for</span> (<span class="t">int</span> i = <span class="n">0</span>; i &lt; <span class="n">8</span>; i++) {
+    <span class="f">pinMode</span>(btns[i], <span class="k">INPUT</span>);
+  }
+}
+
+<span class="t">void</span> <span class="f">loop</span>() {
+  <span class="t">bool</span> pressed = <span class="k">false</span>;
+  <span class="k">for</span> (<span class="t">int</span> i = <span class="n">0</span>; i &lt; <span class="n">8</span>; i++) {
+    <span class="k">if</span> (<span class="f">digitalRead</span>(btns[i]) == <span class="k">HIGH</span>) {  <span class="c">// 哪顆被按下</span>
+      <span class="f">tone</span>(buzzer, notes[i]);            <span class="c">// 就發對應音</span>
+      pressed = <span class="k">true</span>;
+    }
+  }
+  <span class="k">if</span> (!pressed) <span class="f">noTone</span>(buzzer);          <span class="c">// 都沒按就靜音</span>
+}</pre>
+    </div>
+    <p class="prose muted"><strong>程式說明：</strong><code class="kbd">for</code> 迴圈逐一檢查 8 顆按鈕，按到哪顆就用同一索引 <code class="kbd">i</code> 從 <code class="kbd">notes[]</code> 取出對應頻率發聲；用 <code class="kbd">pressed</code> 旗標記錄是否有任何按鍵被按下，全部放開時才靜音。日後想加按鍵或改音，只要改陣列內容即可。</p>
+
+    <div class="steps">
+      <div class="step" style="counter-reset:s 2">
+        <h4>將電路安裝至雷切外殼內，按鈕對齊面板開孔</h4>
+        <p><strong>面板開孔：</strong>回 Illustrator 依按鈕實際間距排 8 個圓孔（常見 Ø12mm），間距建議 18～20mm 以利手指分開按壓。<strong>固定零件：</strong>按鈕穿過面板孔後以螺帽鎖固；Arduino 與麵包板用 3D 列印固定座（PETG）鎖在底板上。<strong>走線整理：</strong>USB 線預留從外殼側邊出線的開口。</p>
+        <p class="muted keyline">呼應第五週選材：面板裝飾件用 PLA、需鎖螺絲承力的固定座用 PETG、軟觸感琴鍵墊可用 TPU。</p>
+      </div>
+      <div class="step">
+        <h4>測試 Do Re Mi 聲音並驗收</h4>
+        <p><strong>逐鍵測試：</strong>從 Do 到高音 Do 逐顆按壓，確認每顆發出正確且唯一的音。<strong>彈一首驗收：</strong>以「小星星」開頭為例——<span class="kw">Do Do Sol Sol La La Sol</span>，能完整彈出即代表電路、程式、外殼三者整合成功。<strong>延伸挑戰：</strong>加裝 LED 隨按鍵亮燈，或用陣列再存一首樂曲讓裝置自動演奏。</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="block-label">★ 教學重點</div>
+      <p>剖析「電子鋼琴」的發聲原理，引導學生比較<strong>機械式（凸輪撥動）</strong>與<strong>電子式（程式控制）</strong>兩種發聲機制的異同，串連整學期的學習脈絡。</p>
+    </div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 6-1｜輸入·判斷·輸出</h3><div class="ws-kind">Arduino Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">把「按鍵發聲」對應到「輸入 → 判斷 → 輸出」架構，各是哪個零件或程式碼？</span>
+        <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">為什麼一定要用「無源」蜂鳴器才能彈出不同音階？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">下拉電阻的作用是什麼？如果不接會發生什麼現象？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">用陣列＋for 迴圈取代 8 個 if，有什麼好處？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q5</span><span class="q-txt">實作驗收</span>
+        <div class="ws-check">
+          <label><span class="ws-box"></span>Blink 上傳成功</label>
+          <label><span class="ws-box"></span>單鍵發聲完成</label>
+          <label><span class="ws-box"></span>8 鍵都正確發音</label>
+          <label><span class="ws-box"></span>彈出小星星開頭</label>
+        </div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>程式碼別讓學生「抄」，讓他們「改」——先給可運作的範例，再要求改頻率、改腳位、加一顆鍵。每一次「改了就有反應」都是學習動機的燃料。本頁三段程式碼可直接點右上角「複製」貼到 Arduino IDE。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-05.html"><span class="pg-dir">← 上一週</span><span class="pg-t">3D 列印機器與材料認識</span></a>
+  <a class="next" href="week-07.html"><span class="pg-dir">下一週 →</span><span class="pg-t">外盒設計與雷射切割</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>

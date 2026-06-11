@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 7 週 · 外盒設計與雷射切割 | 八音鋼琴創客課程</title>
+<link rel="stylesheet" href="../assets/textbook.css">
+</head>
+<body data-depth="1" data-page="weeks/week-07.html">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="../index.html"><span class="tb-logo">音</span><span class="tb-hide-sm">八音鋼琴創客課程</span></a>
+    <span class="tb-spacer"></span>
+    <button class="tb-btn accent" data-toc>☰ 課程目錄</button>
+    <button class="tb-btn" data-print>⎙ 列印</button>
+  </div>
+</div>
+
+<div class="runhead">
+  <span class="rh-course"><span class="rh-dot"></span>八音鋼琴創客課程</span>
+  <span>階段三 · 電路與外殼</span>
+</div>
+
+<main class="sheet">
+
+  <header class="week-hero">
+    <div class="week-kicker"><span class="wk-bar"></span><span class="week-no">第 7 週</span>&nbsp;·&nbsp;外盒設計 × 雷射切割</div>
+    <h1>放大版電子鋼琴<br>外盒設計與雷射切割</h1>
+    <p class="week-lead">引導學生運用 Tinkercad 進行放大版電子鋼琴外盒的造型設計，從機構運轉所需的內部空間出發，思考音樂模組、Arduino 控制板與電池座的容置位置、出線孔與開關開口的配置，建立「形隨機能」的設計思維。過程中掌握尺寸測量、壁厚設定、卡榫與組裝公差等實務細節，並融入新營在地文化元素發想專屬造型。本週分為「設計篇」與「雷切篇」兩大段，共六節。</p>
+    <div class="week-meta">
+      <span class="chip">6 節課（設計 3＋雷切 3）</span>
+      <span class="chip accent">核心 <b>形隨機能</b></span>
+      <span class="chip">在地：新營意象</span>
+    </div>
+  </header>
+
+  <!-- ===== 設計篇 ===== -->
+  <div class="phase-divider" style="margin:40px 0 0">
+    <div class="phase-tag"><span class="pt-badge" style="background:var(--accent)">設計篇</span><span class="pt-name" style="font-family:var(--serif);font-size:18px;font-weight:700">手繪 → 平面圖 → Tinkercad 建模</span><span style="flex:1;height:1px;background:var(--line)"></span></div>
+  </div>
+
+  <!-- 設計-1 -->
+  <section class="lesson" id="d1">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>設計 1</small><b>手繪</b></div>
+      <div><h2>手繪結構設計</h2><div class="lh-sub">先想清楚、再動軟體</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>讓學生在進入電腦繪圖前，先以手繪方式構思放大版電子鋼琴外盒的結構與造型，建立「先想清楚、再動軟體」的設計習慣，學會用草圖記錄尺寸、機構配置與外觀構想。</p>
+    </div>
+    <p class="prose"><strong>為什麼先手繪：</strong>手繪不需開機、修改快速，最適合在發想初期快速嘗試多種造型與配置。先在紙上把「裡面要放什麼、外面長什麼樣」想清楚，後面用 Tinkercad 建模才不會邊做邊卡。</p>
+    <div class="steps">
+      <div class="step"><h4>盤點與量測</h4><p>用尺或游標卡尺量出每個內部零件（音樂模組、Arduino、電池座）的長寬高，列成清單；這份尺寸表是後續手繪與建模共用的依據。</p></div>
+      <div class="step"><h4>畫三視圖</h4><p>在方格紙上以固定比例（1:1 或 1:2）畫出外盒的<span class="kw">正視、側視、俯視</span>三個角度，幫助從不同方向想像立體外盒。</p></div>
+      <div class="step"><h4>標註尺寸與機構配置</h4><p>標出整體尺寸、壁厚，以及喇叭出音孔、USB 出線孔、電源開關、按鈕琴鍵的位置；用箭頭或文字註記哪裡要留孔、哪裡要卡榫。</p></div>
+      <div class="step"><h4>發想在地文化造型</h4><p>把新營在地意象（鐵道、糖廠煙囪、地方花卉）畫成外盒表面的裝飾草圖，作為後續向量繪圖與建模的造型依據。</p></div>
+    </div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>設計始於草圖</strong>」——手繪是把腦中構想具體化的第一步，也是最快、成本最低的修改方式，培養學生動軟體前先想清楚結構與比例的設計素養。</p></div>
+  </section>
+
+  <!-- 設計-2 -->
+  <section class="lesson" id="d2">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>設計 2</small><b>平面</b></div>
+      <div><h2>電腦繪製平面圖</h2><div class="lh-sub">從「大概」進到「準確」</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>將手繪草圖轉為精確的電腦平面圖，運用 Illustrator 以正確尺寸繪製外盒各面的展開圖與開孔位置，產出可供雷切或匯入 3D 建模的向量檔案。</p>
+    </div>
+    <p class="prose"><strong>為什麼要畫平面圖：</strong>手繪草圖有了構想，但尺寸不夠精確。電腦平面圖能輸入毫米級的正確數值，畫出來的孔位、間距都能直接對應實體零件，是手繪與 3D 建模之間的精確化橋樑。</p>
+    <div class="steps">
+      <div class="step"><h4>設定 1:1 畫板</h4><p>依手繪外盒尺寸新建文件並把畫板設為實際大小（單位 mm），確保螢幕上 1 格＝實體 1mm，後續繪圖即所見即所得。</p></div>
+      <div class="step"><h4>繪製各面輪廓</h4><p>以矩形工具畫出底板、側板、面板等各面，用「變形面板」輸入精確長寬；複雜輪廓改用鋼筆工具。各面可攤平排列為<span class="kw">展開圖</span>方便雷切。</p></div>
+      <div class="step"><h4>繪製開孔與標註</h4><p>在面板對應位置畫出喇叭出音孔、USB 出線孔、開關開口與按鈕琴鍵孔，輸入精確直徑與座標；以文字標註關鍵尺寸，讓圖檔同時是加工說明圖。</p></div>
+      <div class="step"><h4>圖層整理與輸出</h4><p>依「切割線／刻線／標註」分圖層管理，切割線設細線；完成後輸出 SVG（供 Tinkercad 拉伸）或 PDF（供雷切）。</p></div>
+    </div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>精確</strong>」是平面圖的核心價值——從手繪的「大概」進到電腦的「準確」，學生體會數位工具如何把構想轉為可被機器讀取、製造的規格檔案。</p></div>
+  </section>
+
+  <!-- 設計-3 -->
+  <section class="lesson" id="d3">
+    <div class="lesson-head">
+      <div class="lesson-tag"><small>設計 3</small><b>建模</b></div>
+      <div><h2>3D Tinkercad 建模</h2><div class="lh-sub">形隨機能 Form follows function</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>以 Tinkercad 將前兩節的手繪與平面設計轉為 3D 立體外盒模型，理解「形隨機能」——先盤點內部機構所需空間，再決定外盒尺寸、壁厚與開孔，最後匯出 STL、切片列印，走完從數位設計到實體成形的完整流程。</p>
+    </div>
+    <div class="card concept">
+      <div class="card-head"><div class="card-glyph">形</div><div><h3>什麼是「形隨機能」？</h3></div></div>
+      <p class="prose" style="margin:0">外盒不是先決定好看的造型再硬塞零件，而是<strong>先量好機構要佔多少空間，再讓造型「長」在這些機能之上</strong>。先機能、後造型，才不會做出裝不進去的漂亮空盒。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>盤點零件、決定外盒尺寸</h4><p>量出音樂模組、Arduino、電池座的長寬高；外盒「內部淨空間」需比零件總和再加 <span class="kw">2～3mm 餘裕</span>（放線材與緩衝）。內部淨空間加上壁厚，即為外部尺寸。</p><p class="muted keyline">教學提示：先在紙上畫零件擺放配置（俯視圖），決定誰放底層、誰疊上層，再開始建模。</p></div>
+      <div class="step"><h4>建立盒身與開孔</h4><p><strong>盒身：</strong>拖入立方體設為外部尺寸，再複製一個縮小（長寬各減兩倍壁厚）設為「孔洞」，群組挖出中空盒身。<strong>上蓋：</strong>底面加一圈比盒口內緣略小的凸緣（公差約 0.3～0.4mm），讓蓋子能蓋合又不卡死。<strong>機能開孔：</strong>以孔洞挖出喇叭孔、USB 孔、開關開口、琴鍵孔。</p></div>
+      <div class="step"><h4>壁厚、卡榫與在地造型</h4><p><strong>壁厚：</strong>教學作品 2～3mm 即足夠堅固又省料。<strong>固定：</strong>盒內加 3D 列印固定柱（PETG）鎖電路板；上蓋用凸點卡榫或螺絲。<strong>在地元素：</strong>將新營意象轉化為外盒鏤空圖案或表面浮雕。</p></div>
+      <div class="step"><h4>匯出 STL、切片與列印</h4><p>盒身與上蓋分別匯出 STL（檔名如「電子鋼琴_盒身_v1.stl」）；Bambu Studio 平整面朝下擺放，外觀件層高 0.16～0.2mm、填充 10～15%、外殼 2～3 層；鏤空與懸空處檢查支撐，列印後對照零件試裝記錄需修改處。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>如果外盒列印出來零件裝不進去，問題比較可能出在「量測」「壁厚」還是「公差」？引導學生回到步驟一檢查淨空間餘裕，體會「設計→製作→測試→修正」的迭代循環。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>先機能、後造型</strong>」——外盒尺寸由內部機構決定，造型則承載美感與在地文化。引導學生體會自製外盒與第一週現成木盒的差異：木盒是既有的、要去配合它；自製外盒則反過來讓盒子配合自己的作品，這正是從「使用者」邁向「設計者」的關鍵一步。</p></div>
+    <div class="local">
+      <div class="card-head"><div class="card-glyph">營</div><div><h3>在地文化延伸 · 新營意象轉譯</h3><div class="ch-sub">把地方記憶變成外盒造型</div></div></div>
+      <p>引導學生蒐集新營的代表意象——<strong>糖廠紅磚煙囪、五分車鐵道、地方花卉、舊火車站立面</strong>，並思考如何把它們「簡化」成適合雷切鏤空或 3D 浮雕的線條。重點不是寫實，而是抓住意象的輪廓特徵，讓每台鋼琴都帶有「屬於新營」的識別。</p>
+    </div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <!-- ===== 雷切篇 ===== -->
+  <div class="phase-divider" style="margin:10px 0 0">
+    <div class="phase-tag"><span class="pt-badge" style="background:var(--tech)">雷切篇</span><span class="pt-name" style="font-family:var(--serif);font-size:18px;font-weight:700">檔案整理 → Beam Studio → 完成加工</span><span style="flex:1;height:1px;background:var(--line)"></span></div>
+  </div>
+
+  <!-- 雷切-1 -->
+  <section class="lesson" id="l1">
+    <div class="lesson-head">
+      <div class="lesson-tag" style="background:var(--tech)"><small>雷切 1</small><b>整檔</b></div>
+      <div><h2>Illustrator 檔案整理</h2><div class="lh-sub">機器只認「線」</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>在送入雷切前，學會把 Illustrator 圖檔整理成雷切機能正確讀取的格式——確認路徑封閉、線條設定正確、尺寸 1:1、文字轉外框、排版省料，避免機器停頓、重複切割或切錯。</p>
+    </div>
+    <p class="prose"><strong>為什麼要整理檔案：</strong>雷切機只看「線」——線是否封閉、什麼顏色、多粗，直接決定它怎麼切。送圖前花幾分鐘把檔案整理乾淨，能省下大量切壞重做的材料與時間。</p>
+    <div class="steps">
+      <div class="step"><h4>檢查路徑封閉</h4><p>按 <span class="kbd">Ctrl + Y</span> 切換輪廓檢視，確認每個要切穿的形狀都是「頭尾相連的封閉路徑」；未封閉可用 <span class="kbd">Ctrl + J</span> 連接端點。</p></div>
+      <div class="step"><h4>線條顏色與粗細</h4><p>切割線統一設為<span class="kw">紅色、筆畫 0.01mm（髮絲線）</span>，讓機器辨識為「切穿」；雕刻區（如在地文化圖案）以另一顏色區分，後續在 Beam Studio 指定為雕刻。</p></div>
+      <div class="step"><h4>文字外框與尺寸確認</h4><p>面板含文字時全選按 <span class="kbd">Ctrl + Shift + O</span> 建立外框（轉向量），避免雷切機無法辨識字型；再次確認畫板與零件為 1:1 實際尺寸。</p></div>
+      <div class="step"><h4>排版省料與輸出</h4><p>把所有零件緊密排列於材料範圍內、共用邊線可節省木板；相同零件群組複製。整理完成後輸出 SVG 或 DXF。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>如果雷切時某條線沒被切到，最可能的原因是什麼？引導學生回頭檢查該路徑是否封閉、線條顏色與粗細是否設定正確。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>機器只認線</strong>」——封閉路徑、顏色、粗細是雷切的三大關鍵；建立「送圖前先整檔」的專業習慣。</p></div>
+  </section>
+
+  <!-- 雷切-2 -->
+  <section class="lesson" id="l2">
+    <div class="lesson-head">
+      <div class="lesson-tag" style="background:var(--tech)"><small>雷切 2</small><b>軟體</b></div>
+      <div><h2>Beam Studio 軟體教學</h2><div class="lh-sub">顏色 / 圖層即加工指令</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>認識雷射切割控制軟體 Beam Studio 的操作介面，學會匯入整理好的圖檔、設定切割與雕刻參數、排版省料，並完成從電腦送圖到機器切割的完整流程。</p>
+    </div>
+    <p class="prose"><strong>什麼是 Beam Studio：</strong>FLUX 雷切機的控制軟體，負責把電腦裡的向量圖轉成雷射機的切割路徑——決定哪條線要「切穿」、哪塊面要「雕刻」，以及用多大功率與速度。</p>
+    <div class="steps">
+      <div class="step"><h4>匯入圖檔</h4><p>把整理好的 SVG／DXF 拖入工作區；匯入後確認尺寸為 1:1，避免被軟體自動縮放。</p></div>
+      <div class="step"><h4>區分切割與雕刻</h4><p>以線條顏色或圖層指定加工方式——封閉輪廓設為「<span class="kw">切割（Cut）</span>」切穿木板；表面圖案設為「<span class="kw">雕刻（Engrave）</span>」只燒紋路不切穿。在地文化裝飾通常用雕刻呈現。</p></div>
+      <div class="step"><h4>設定參數</h4><p>選擇實際材料與厚度（如 3mm 椴木合板），軟體帶出建議功率（Power）與速度（Speed）；<span class="kw">切割用高功率低速、雕刻用低功率高速</span>。新材料先在邊角試切確認參數。</p></div>
+      <div class="step"><h4>對焦、定位與切割</h4><p>放入材料執行對焦（調整雷射頭與材料距離），於預覽框確認圖檔落在材料範圍內、避開節疤；按下開始前確認排煙與防火措施，全程不可離開機器。</p></div>
+    </div>
+    <div class="safety">
+      <div class="card-head"><div class="card-glyph">⚠</div><div><h3>雷射切割安全提醒</h3></div></div>
+      <ul>
+        <li>雷切過程務必<strong>開啟排煙、備妥滅火工具</strong>，操作者全程在場監看。</li>
+        <li><strong>切勿切割 PVC 等含氯材料</strong>（會釋放有毒氣體）。</li>
+        <li>先在邊角「試切」確認參數，再正式切割。</li>
+      </ul>
+    </div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>顏色／圖層即加工指令</strong>」——同一張圖，靠圖層區分切割與雕刻；並建立「先試切、再正式切」與全程監看的雷切安全習慣。</p></div>
+  </section>
+
+  <!-- 雷切-3 -->
+  <section class="lesson" id="l3">
+    <div class="lesson-head">
+      <div class="lesson-tag" style="background:var(--tech)"><small>雷切 3</small><b>加工</b></div>
+      <div><h2>雷切完成 + 加工</h2><div class="lh-sub">假組先於上膠</div></div>
+    </div>
+    <div class="objective">
+      <div class="block-label">🎯 教學目標</div>
+      <p>完成雷切後的取件、檢驗與後加工，學會以「假組」驗證零件是否吻合，並進行毛邊修整、表面處理與接合，把一堆平面木片組裝成完整的電子鋼琴外盒。</p>
+    </div>
+    <p class="prose"><strong>為什麼要先假組：</strong>雷切難免有誤差，先不上膠試拼一次，能在還能修改的階段發現卡榫太緊、孔位偏移等問題，避免上膠後無法挽回。</p>
+    <div class="steps">
+      <div class="step"><h4>取件與檢查</h4><p>從雷切機取出所有零件對照圖檔清點；檢查邊緣是否切透、有無燒焦過深或未切斷處，未切斷的可用美工刀小心分離。</p></div>
+      <div class="step"><h4>假組試拼</h4><p>不上膠、依組裝順序把各片卡榫嵌合，確認盒身、上蓋、面板能順利接合；卡榫過緊以砂紙微修，過鬆則記下回 Illustrator 修正公差。</p></div>
+      <div class="step"><h4>毛邊修整與打磨</h4><p>用砂紙（先粗後細）磨除邊緣毛刺與燒焦痕；雷切焦邊可用濕布或橡皮擦輕拭。打磨時配戴口罩、於通風處進行。</p></div>
+      <div class="step"><h4>正式組裝與整合</h4><p>確認假組無誤後，於卡榫接合處上白膠正式黏合；裝入 Arduino、音樂模組與電池座，按鈕對齊面板開孔，最後蓋上上蓋完成整台電子鋼琴。</p></div>
+    </div>
+    <div class="prompt"><div class="block-label">❓ 教學提問引導</div><p>假組時若發現卡榫卡不進去，該回頭修「圖檔公差」還是直接「砂磨零件」？引導學生理解：偶發一兩片用砂磨即可，若每片都卡則是設計公差問題，需回 Illustrator 修正後重切。</p></div>
+    <div class="point"><div class="block-label">★ 教學重點</div><p>強調「<strong>假組先於上膠</strong>」的工程習慣——可逆的試誤是控制品質的關鍵；呼應第二週雷切與本週外盒設計，完成從平面圖檔到立體成品的最後一哩。</p></div>
+  </section>
+
+  <hr class="rule heavy">
+
+  <div class="worksheet">
+    <div class="ws-head">
+      <div class="ws-title"><div class="lesson-tag" style="width:38px;height:38px;border-radius:8px"><b style="font-size:15px">單</b></div><div><h3>學習單 7-1｜外盒設計與雷切</h3><div class="ws-kind">Enclosure &amp; Laser Worksheet</div></div></div>
+      <div class="ws-meta">班級＿＿＿ 座號＿＿<br>姓名＿＿＿＿＿＿</div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-q"><span class="q-no">Q1</span><span class="q-txt">用自己的話解釋「形隨機能」。你的外盒內部要放哪些零件？淨空間預留了幾 mm 餘裕？</span>
+        <div class="ws-lines"><div class="ws-line"></div><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q2</span><span class="q-txt">雷切的「三大關鍵」是哪三個？切割線你設定的顏色與粗細是？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q3</span><span class="q-txt">你選了哪個新營在地意象做造型？打算用「雷切鏤空」還是「雕刻」呈現？為什麼？</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+      <div class="ws-q"><span class="q-no">Q4</span><span class="q-txt">假組時發現的問題與你的解決方式：</span>
+        <div class="ws-lines"><div class="ws-line"></div></div></div>
+    </div>
+  </div>
+
+  <div class="tip"><div class="block-label">💡 本週教學提示</div><p>本週是整學期的「設計高峰」——學生第一次從零設計一個容納真實電路的外盒。建議多留手繪時間，並要求每人先通過「假組」才准上膠。把新營意象當成讓作品有個人記憶的鉤子，而非額外負擔。</p></div>
+
+</main>
+
+<nav class="pager">
+  <a href="week-06.html"><span class="pg-dir">← 上一週</span><span class="pg-t">鋼琴聲音 → 認識 Arduino</span></a>
+  <a class="next" href="week-08.html"><span class="pg-dir">下一週 →</span><span class="pg-t">3D 列印印製外盒</span></a>
+</nav>
+
+<script src="../assets/textbook.js"></script>
+</body>
+</html>
